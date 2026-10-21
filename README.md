@@ -4,6 +4,12 @@ Eine leichtgewichtige, dateibasierte Schnitzeljagd- und Geocaching-Webanwendung 
 
 ---
 
+## 🎯 Entstehungsgeschichte
+
+Das Kath. Jugendbüro des Dekanats Emsland-Nord organisiert gemeinsam mit vielen ehrenamtlich Engagierten traditionell am dritten Fastensonntag den 
+
+[Misereor Fastenmarsch](https://www.kjb-emsland-nord.de/veranstaltungen-1/misereor-fastenmarsch) . Diesen gibt es mittlerweile schon seit 39 Jahren. In diesem Jahr wird mit den gesammelten Spenden die Fastenaktion mit Projekten in Bolivien unterstützt.
+
 ## 🎯 Über das Projekt
 
 Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents oder Geocaching-Aktionen. 
