@@ -1,5 +1,4 @@
 <?php
-// 1. KOMPLETTE LOGIK & DATENVERARBEITUNG AM ANFANG
 declare(strict_types=1);
 
 $content ='<?xml version="1.0" encoding="UTF-8" standalone="no" ?>' . "\n";
@@ -40,7 +39,6 @@ Im Textfeld werden die Wegpunkte der aktuell vorhandenen Orte (orte/orte.txt) im
 Bitte nach der Festlegung aller Orte (Namen und Koordinaten) den in der Textbox aufgeführten Inhalt in die Datei dateien/navigation.gpx kopieren.
 <br><br>
 
-<!-- 2. REINE HTML-AUSGABE AM ENDE -->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8'); ?>">
 <textarea name="content" cols="150" rows="30"><?php echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?></textarea>
 </form>
