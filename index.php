@@ -24,78 +24,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ----------------------------------------------------------------------------- */
+
 declare(strict_types=1);
 error_reporting(E_ALL);
 ini_set("display_errors", "Off");
 ini_set("log_errors", "On");
 ini_set("error_log", "error.log");
 
-
-
-function get_dynamic_shuffle(string $datum): int
-{
-    global $secret;
-    $hash = md5($secret . $datum);
-    return hexdec(substr($hash, 0, 4)) % 30;
-}
-
-function xxxxtocode(string $string, int $dynamic_shuffle): string
-{
-    $all = "123456789ACDEFGHJKLMNPQRTUVWXZ";
-    $replacements = [
-        "0" => "U", "B" => "V", "I" => "W", "O" => "X", "S" => "Z",
-    ];
-    $str = strtr(strtoupper($string), $replacements);
-    $output = "";
-    foreach ([0, 3, 2, 1] as $i) {
-        $p = strpos($all, $str[$i]);
-        if ($p !== false) {
-            $output .= $all[($p + $dynamic_shuffle) % 30];
-        }
-    }
-    return $output;
-}
-
-function codetoxxxx(string $string, int $dynamic_shuffle): string
-{
-    $all = "123456789ACDEFGHJKLMNPQRTUVWXZ";
-    $replacements = [
-        "U" => "0", "V" => "B", "W" => "I", "X" => "O", "Z" => "S",
-    ];
-    $decoded = "";
-    foreach (str_split(strtoupper($string)) as $char) {
-        $p = strpos($all, $char);
-        if ($p !== false) {
-            $decoded .= $all[($p - $dynamic_shuffle + 30) % 30];
-        }
-    }
-    if (strlen($decoded) < 4) return "!!!!";
-    $output = $decoded[0] . $decoded[3] . $decoded[2] . $decoded[1];
-    return strtr($output, $replacements);
-}
-
-
-
-
-function sanitize_html_content(string $html): string {
-    // 1. <script>-Tags inklusive Inhalt komplett entfernen
-    $html = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $html);
-
-    // 2. JavaScript-Event-Handler (onclick, onload etc.) neutralisieren
-    $html = preg_replace('/(\s+)(on[a-z]+\s*=\s*)/i', '$1data-disabled-$2', $html);
-
-    // 3. "javascript:" URIs in Links unschädlich machen
-    $html = preg_replace('/href\s*=\s*(["\'])\s*javascript:[^"\']*\1/i', 'href="#"', $html);
-
-    return $html;
-}
-
 function loadConfig($filename)
 {
     $config = [];
-    if (file_exists($filename)) {
-        $lines = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $safe_filename = preg_replace("/[^a-zA-Z0-9_\-\.\/]/", "", $filename);
+
+    if (file_exists($safe_filename) && is_readable($safe_filename)) {
+        $lines = file(
+            $safe_filename,
+            FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
+        );
         foreach ($lines as $line) {
+            $line = trim($line);
+            if ($line === "" || $line[0] === "#" || $line[0] === ";") {
+                continue;
+            }
+
             if (strpos($line, "=") !== false) {
                 list($key, $value) = explode("=", $line, 2);
                 $config[trim($key)] = trim($value);
@@ -111,7 +62,6 @@ $titellang = $config["titellang"] ?? "titellang";
 
 $secret = $config["secret"] ?? "secret";
 $stationoffset = (int) ($config["stationoffset"] ?? 42);
-$shuffle = (int) ($config["shuffle"] ?? 10);
 $sevenmodulo = (int) ($config["sevenmodulo"] ?? 100);
 $adminpasswort = $config["adminpasswort"] ?? "passwort";
 $aktionsende = filter_var(
@@ -125,6 +75,11 @@ $meinname = $config["meinname"] ?? "meinname42";
 if (isset($config["tag"])) {
     $tag = $config["tag"];
 }
+
+// Funktionstest (Simulierung eines Tages im Aktionszeitraum)
+//$tag = "08.06.2025";
+//$st = "10";
+//$minute = "10";
 
 function ArraySort($tArray)
 {
@@ -247,6 +202,73 @@ function timetointerval($st, $zehn)
 }
 
 
+function feistelRound($R, $round, $secret) {
+    $hash = hash("sha256", $secret . "_" . $round . "_" . $R);
+    return hexdec(substr($hash, 0, 8)) % 900;
+}
+
+
+function xxxxtocode($string) {
+    global $secret;
+    $all = "123456789ACDEFGHJKLMNPQRTUVWXZ";
+    
+
+    $dez = (int) base_convert($string, 30, 10);
+    
+
+    $L = $dez % 900;
+    $R = intdiv($dez, 900);
+    
+
+    for ($round = 0; $round < 4; $round++) {
+        $next_L = $R;
+        $next_R = ($L + feistelRound($R, $round, $secret)) % 900;
+        $L = $next_L;
+        $R = $next_R;
+    }
+    
+    $encrypted_zahl = $R * 900 + $L;
+    
+
+    $output = "";
+    $temp = $encrypted_zahl;
+    for ($i = 0; $i < 4; $i++) {
+        $output = $all[$temp % 30] . $output;
+        $temp = intdiv($temp, 30);
+    }
+    
+    return $output;
+}
+
+
+function codetoxxxx($string) {
+    global $secret;
+    $all = "123456789ACDEFGHJKLMNPQRTUVWXZ";
+    
+
+    $encrypted_zahl = 0;
+    $chars = str_split(strtoupper($string));
+    foreach ($chars as $char) {
+        $encrypted_zahl = $encrypted_zahl * 30 + strpos($all, $char);
+    }
+    
+    $R = intdiv($encrypted_zahl, 900);
+    $L = $encrypted_zahl % 900;
+    
+
+    for ($round = 3; $round >= 0; $round--) {
+        $R_prev = $L;
+        $L_prev = ($R - feistelRound($R_prev, $round, $secret) + 900) % 900;
+        $L = $L_prev;
+        $R = $R_prev;
+    }
+    
+    $original_zahl = $R * 900 + $L;
+    
+
+    $xxxx = strtoupper(base_convert((string)$original_zahl, 10, 30));
+    return sprintf("%04s", $xxxx);
+}
 
 
 function stringtoxxxx($string)
@@ -344,30 +366,57 @@ $ergebnisdatum = $tag;
 $ergebniswtag = wochentag($tag);
 $ergebniszeit = timetointerval($st, $zehn);
 
-$filename = file("orte/orte.txt");
+$orte_datei = "orte/orte.txt";
 $i = 0;
+$anzgesamtorte = 0;
 
-foreach ($filename as $line) {
-    $list = explode(";", $line);
-    $nr = $list[0];
-    if ($nr >= 0 && $nr <= 89) {
-        $listname[$nr] = $list[1];
+if (file_exists($orte_datei) && is_readable($orte_datei)) {
+    $filename = file(
+        $orte_datei,
+        FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
+    );
 
-        $station[$nr] = $list[1];
-        $lat[$nr] = $list[2];
-        $lon[$nr] = trim($list[3]);
-        $text[$nr] = isset($list[4]) ? sanitize_html_content(trim($list[4])) : null;
-        if ($nr > 0 && $nr <= 89) {
-            $dropdown[$i] = $list[1];
-            $i = $i + 1;
+    foreach ($filename as $line) {
+        $line = trim($line);
 
-            array_push($gesamtorte, $nr);
+        if ($line === "" || $line[0] === "#") {
+            continue;
+        }
+
+        $list = explode(";", $line);
+
+        if (count($list) < 2) {
+            continue;
+        }
+
+        $nr = trim($list[0]);
+
+        if (ctype_digit($nr) && intval($nr) >= 0 && intval($nr) <= 89) {
+            $nr_int = intval($nr);
+            $nr_formatted = sprintf("%02d", $nr_int);
+
+            // Standardwerte setzen, falls Spalten in der Zeile fehlen (verhindert PHP-Warnungen)
+            $station_name = trim($list[1]);
+            $station_lat = isset($list[2]) ? trim($list[2]) : "0.0";
+            $station_lon = isset($list[3]) ? trim($list[3]) : "0.0";
+            $station_text = isset($list[4]) ? trim($list[4]) : "";
+
+            $listname[$nr_formatted] = $station_name;
+            $station[$nr_formatted] = $station_name;
+            $lat[$nr_formatted] = $station_lat;
+            $lon[$nr_formatted] = $station_lon;
+            $text[$nr_formatted] = $station_text;
+
+            if ($nr_int > 0 && $nr_int <= 89) {
+                $dropdown[$i] = $station_name;
+                $i = $i + 1;
+
+                array_push($gesamtorte, $nr_formatted);
+            }
         }
     }
     $anzgesamtorte = $i;
 }
-
-// Eingabe Parameter über das Eingabefeld
 
 if (isset($_POST["fstation"])) {
     $fstation = $_POST["fstation"];
@@ -383,26 +432,34 @@ if (isset($_POST["fstation"])) {
 
 if (isset($_POST["seven"])) {
     $startseite = false;
-    $seven = $_POST["seven"];
+
+    // Nur exakt alphanumerische Zeichen für den 7-stelligen Code erlauben
+    $seven = preg_replace("/[^a-zA-Z0-9]/", "", $_POST["seven"]);
 
     $code = $_POST["code"];
     $code = strtolower($code);
     $s = $code . ";" . $secret;
     $md5 = md5($s);
 
-    $folder_name = substr($md5, 0, 2);
+    // Pfad-Bereinigung zur absoluten Sicherheit gegen Path Traversal
+    $folder_name = preg_replace("/[^a-f0-9]/i", "", substr($md5, 0, 2));
     $folder_path = "profile/" . $folder_name;
+
     if (!file_exists($folder_path)) {
-        mkdir($folder_path, 0777, true);
+        // 0755 ist restriktiver und sicherer als 0777
+        mkdir($folder_path, 0755, true);
     }
 
-    $file = $folder_path . "/" . $md5 . ".txt";
+    $safe_md5 = preg_replace("/[^a-f0-9]/i", "", $md5);
+    $file = $folder_path . "/" . $safe_md5 . ".txt";
 
+    $inhalt = "";
     if (file_exists($file)) {
         $inhalt = file_get_contents($file);
     }
     $inhalt = $inhalt ?? "";
 
+    // Nur schreiben, wenn die Eingabe nach der Bereinigung immer noch exakt 7 Zeichen lang ist
     if (strlen($seven) == 7) {
         if (strpos($inhalt, $seven) === false) {
             $inhalt .= $seven . "\n";
@@ -450,40 +507,51 @@ if (isset($_POST["code"])) {
         $s = $code . ";" . $secret;
         $md5 = md5($s);
         header("Location: ./" . $md5);
+        exit();
     }
 
-if (strlen($code) == 4) {
-if (preg_match("/^[123456789acdefghjklmnpqrtuvwxzACDEFGHJKLMNPQRTUVWXZ]+$/", $b) == 1 && strlen($b) == 4) {
-    $found = false;
-    for ($day_offset = 0; $day_offset < $aktionstage; $day_offset++) {
-        $test_date_day = date2dayofyear($beginnaktion) + $day_offset;
-        $test_date = dayofyear2date($test_date_day);
-        $dynamic_shuffle = get_dynamic_shuffle($test_date);
-        $xxxx = codetoxxxx($b, $dynamic_shuffle);
-        $str = xxxxtostring($xxxx);
-        list($s, $datum) = explode(";", $str, 3);
-        if ($datum == $test_date && !$found) {
-            $wtag = wochentag($datum);
-            $tag = aktionstag($datum);
-            $s2 = $s . ";" . $secret;
-            $md5 = md5($s2);
-            $stationname = $station[$s] ?? null;
-            $stationadmin = substr($md5, 0, 5);
-            $adminhtml = $adminhtml . $b . " " . $str . " " . $wtag . " " . $tag . " " . $stationname . " " . ' <a href="./' . $stationadmin . '">' . $stationadmin . "</a>";
-            $adminhtml = $adminhtml . ' <a href="./' . $stationadmin . '_qr">' . $stationadmin . "_qr</a><br>";
-            $found = true;
+    if (strlen($code) == 4) {
+        if (
+            preg_match(
+                "/^[123456789acdefghjklmnpqrtuvwxzACDEFGHJKLMNPQRTUVWXZ]+$/",
+                $code
+            ) == 1
+        ) {
+            $ergebnisxxxx = codetoxxxx($code);
+            $dez = base_convert($ergebnisxxxx, 30, 10);
+            $hex = base_convert($ergebnisxxxx, 30, 16);
+            $hex = sprintf("%05s", $hex);
+            $dezcheck = $dez % $sevenmodulo;
+            $dezcheck = sprintf("%02d", $dezcheck);
+
+            $dez2 = base_convert($ergebnisxxxx, 30, 10);
+            $sta = intdiv(intval($dez2), 9000);
+            $sta = sprintf("%02d", $sta);
+
+            $str = xxxxtostring($ergebnisxxxx);
+            $zeile = explode(";", $str);
+            $tmptag = aktionstag($zeile[1]);
+
+            if (
+                strcmp($zeile[0], $stationid) == 0 &&
+                $tmptag >= 0 &&
+                $tmptag < $aktionstage
+            ) {
+                $seven =
+                    substr($hex, 0, 2) .
+                    substr($dezcheck, 0, 1) .
+                    substr($hex, 2, 1) .
+                    substr($dezcheck, 1, 1) .
+                    substr($hex, 3, 2);
+                header("Location: ./" . $seven);
+                exit();
+            }
         }
     }
 }
 
-
-}
-
-}
-
-
 if (isset($_GET["a"])) {
-    $a = $_GET["a"];
+    $a = preg_replace("/[^a-zA-Z0-9]/", "", $_GET["a"]);
     $a = strtolower($a);
 
     if (strlen($a) == 32) {
@@ -491,6 +559,7 @@ if (isset($_GET["a"])) {
         $startseite = false;
     }
 }
+
 if (isset($_GET["c"])) {
     $c = $_GET["c"];
 }
@@ -503,84 +572,115 @@ if (isset($_GET["e"])) {
     $e = $_GET["e"];
 }
 if (isset($_GET["b"])) {
-    if (strcmp($a, $adminpasswort) == 0) {
+    if (strcmp($a, $adminpasswort) === 0) {
         $startseite = false;
         $adminhtml = " ";
-        $b = $_GET["b"];
+
+        $b = preg_replace("/[^a-zA-Z0-9_\-\s]/", "", $_GET["b"]);
+
         if (empty($c)) {
-            $filename = file("orte/orte.txt");
-            foreach ($filename as $line) {
-                $pos = stripos($line, $b);
-                if ($pos !== false || strcmp($b, "all") == 0) {
-                    $zeile = explode(";", $line);
-                    $s = $zeile[0] . ";" . $secret;
-                    $md5 = md5($s);
-                    $stationadmin = substr($md5, 0, 5);
-                    $z3 = trim($zeile[3]);
-                    $adminhtml =
-                        $adminhtml .
-                        $line .
-                        " " .
-                        '<a href="./' .
-                        $stationadmin .
-                        '">' .
-                        $stationadmin .
-                        '</a> <a href="./' .
-                        $stationadmin .
-                        '_qr">' .
-                        $stationadmin .
-                        "_qr</a>";
-                    $adminhtml =
-                        $adminhtml .
-                        '<a href="Karte_' .
-                        $zeile[2] .
-                        "_" .
-                        $z3 .
-                        '"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;';
-                    $adminhtml =
-                        $adminhtml .
-                        '<a href="https://maps.google.com/maps?q=' .
-                        $zeile[2] .
-                        "," .
-                        $z3 .
-                        '"><img src="bilder/bilder/maps.png"></a>';
-                    $adminhtml =
-                        $adminhtml .
-                        '<a href="geo:' .
-                        $zeile[2] .
-                        "," .
-                        $z3 .
-                        '"><img src="bilder/bilder/geo.jpg"></a><br>';
+            $orte_datei = "orte/orte.txt";
+            if (file_exists($orte_datei) && is_readable($orte_datei)) {
+                $filename = file(
+                    $orte_datei,
+                    FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
+                );
+                foreach ($filename as $line) {
+                    $pos = stripos($line, $b);
+                    if ($pos !== false || strcmp($b, "all") === 0) {
+                        $zeile = explode(";", $line);
+
+                        $z0 = isset($zeile[0]) ? trim($zeile[0]) : "";
+                        $z2 = isset($zeile[2]) ? trim($zeile[2]) : "0.0";
+                        $z3 = isset($zeile[3]) ? trim($zeile[3]) : "0.0";
+
+                        $s = $z0 . ";" . $secret;
+                        $md5 = md5($s);
+                        $stationadmin = substr($md5, 0, 5);
+
+                        $safe_line = htmlspecialchars(
+                            $line,
+                            ENT_QUOTES,
+                            "UTF-8"
+                        );
+                        $safe_stationadmin = htmlspecialchars(
+                            $stationadmin,
+                            ENT_QUOTES,
+                            "UTF-8"
+                        );
+                        $safe_z2 = htmlspecialchars($z2, ENT_QUOTES, "UTF-8");
+                        $safe_z3 = htmlspecialchars($z3, ENT_QUOTES, "UTF-8");
+
+                        $adminhtml .=
+                            $safe_line .
+                            " " .
+                            '<a href="./' .
+                            $safe_stationadmin .
+                            '">' .
+                            $safe_stationadmin .
+                            "</a> " .
+                            '<a href="./' .
+                            $safe_stationadmin .
+                            '_qr">' .
+                            $safe_stationadmin .
+                            "_qr</a>" .
+                            '<a href="Karte_' .
+                            $safe_z2 .
+                            "_" .
+                            $safe_z3 .
+                            '"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;' .
+                            '<a href="https://maps.google.com/maps?q=' .
+                            $safe_z2 .
+                            "," .
+                            $safe_z3 .
+                            '"><img src="bilder/bilder/maps.png"></a>' .
+                            '<a href="geo:' .
+                            $safe_z2 .
+                            "," .
+                            $safe_z3 .
+                            '"><img src="bilder/bilder/geo.jpg"></a><br>';
+                    }
                 }
             }
         }
 
+        if (preg_match("/^[0-9.]+$/", $d) == 1) {
+            $b = sprintf("%02d", $b);
+            $c = sprintf("%06s", $c);
+            $d = sprintf("%02d", $d);
 
-if (preg_match("/^[0-9.]+$/", $d) == 1) {
-    $b = sprintf("%02d", $b);
-    $c = sprintf("%s", $c); // Datum muss als String bleiben
-    $d = sprintf("%02d", $d);
+            $dteile = explode(".", $c);
+            $dtag = (int) $dteile[0];
+            $dmonat = (int) $dteile[1];
+            $djahr = (int) $dteile[2];
+            $atag = aktionstag($c);
 
-    $dteile = explode(".", $c);
-    $dtag = (int) $dteile[0];
-    $dmonat = (int) $dteile[1];
-    $djahr = (int) $dteile[2];
-    $atag = aktionstag($c);
+            if (
+                checkdate($dmonat, $dtag, $djahr) &&
+                $atag >= 0 &&
+                $atag < $aktionstage
+            ) {
+                $str = $b . ";" . $c . ";" . $d . ";" . $e;
 
-    if (checkdate($dmonat, $dtag, $djahr) && $atag >= 0 && $atag < $aktionstage) {
-        $str = $b . ";" . $c . ";" . $d . ";" . $e;
-        $xxxx = stringtoxxxx($str);
-        $daily_shuffle = get_dynamic_shuffle($c);
-        $code = xxxxtocode($xxxx, $daily_shuffle);
-        $tag = aktionstag($c);
-        $stationname = $station[$b] ?? null;
-        if ($e < 6) {
-            $adminhtml = $adminhtml . $str . " " . " " . $atag . " " . $code . " " . $stationname . "<br>";
+                $xxxx = stringtoxxxx($str);
+                $code = xxxxtocode($xxxx);
+                $tag = aktionstag($c);
+                $stationname = $station[$b] ?? null;
+                if ($e < 6) {
+                    $adminhtml =
+                        $adminhtml .
+                        $str .
+                        " " .
+                        " " .
+                        $atag .
+                        " " .
+                        $code .
+                        " " .
+                        $stationname .
+                        "<br>";
+                }
+            }
         }
-    }
-}
-
-
 
         if (
             preg_match(
@@ -646,9 +746,7 @@ if (!$stationgefunden) {
                     $string =
                         $stationgefunden . ";" . $tag . ";" . $st . ";" . $zehn;
                     $ergebnisxxxx = stringtoxxxx($string);
-                    $daily_shuffle = get_dynamic_shuffle($tag);
-                    $daily_shuffle = get_dynamic_shuffle($tag);
-                    $ergebnis = xxxxtocode($ergebnisxxxx, $daily_shuffle);
+                    $ergebnis = xxxxtocode($ergebnisxxxx);
 
                     $dez = base_convert($ergebnisxxxx, 30, 10);
                     $hex = base_convert($ergebnisxxxx, 30, 16);
@@ -664,6 +762,7 @@ if (!$stationgefunden) {
                         substr($dezcheck, 1, 1) .
                         substr($hex, 3, 2);
                     header("Location: ./" . $seven);
+                    exit();
                 } else {
                     $ergebnis = "____";
                 }
@@ -671,34 +770,28 @@ if (!$stationgefunden) {
         }
     }
 
-if (isset($a) && strlen($a) == 7) {
-    $seven = $a;
-    $hex = substr($a, 0, 2) . substr($a, 3, 1) . substr($a, 5, 2);
-    $checkdez = substr($a, 2, 1) . substr($a, 4, 1);
-    $dez = base_convert($hex, 16, 10);
-    $checkmodulo = $dez % $sevenmodulo;
+    if (isset($a) && strlen($a) == 7) {
+        $seven = $a;
+        $hex = substr($a, 0, 2) . substr($a, 3, 1) . substr($a, 5, 2);
+        $checkdez = substr($a, 2, 1) . substr($a, 4, 1);
+        $dez = base_convert($hex, 16, 10);
+        $checkmodulo = $dez % $sevenmodulo;
 
-    if ($checkmodulo == $checkdez) {
-        $xxxx = base_convert($hex, 16, 30);
-        $xxxx = sprintf("%04s", $xxxx);
-        $temp_datum = xxxxtoday($xxxx);
-        $daily_shuffle = get_dynamic_shuffle($temp_datum);
-
-        $ergebnis = xxxxtocode($xxxx, $daily_shuffle);
-        $str = xxxxtostring($xxxx);
-        $zeile = explode(";", $str);
-        if (isset($station[$zeile[0]]) && $station[$zeile[0]] != "") {
-            $stationgefunden = $zeile[0];
+        if ($checkmodulo == $checkdez) {
+            $xxxx = base_convert($hex, 16, 30);
+            $xxxx = sprintf("%04s", $xxxx);
+            $ergebnis = xxxxtocode($xxxx);
+            $str = xxxxtostring($xxxx);
+            $zeile = explode(";", $str);
+            if ($station[$zeile[0]] != "") {
+                $stationgefunden = $zeile[0];
+            }
+            $s = codetoxxxx($ergebnis);
+            $ergebnisdatum = xxxxtoday($s);
+            $ergebniszeit = xxxxtotime($s);
+            $ergebniswtag = wochentag($ergebnisdatum);
         }
-        $s = codetoxxxx($ergebnis, $daily_shuffle);
-        $ergebnisdatum = xxxxtoday($s);
-        $ergebniszeit = xxxxtotime($s);
-        $ergebniswtag = wochentag($ergebnisdatum);
     }
-}
-
-
-
 }
 
 if ($stationgefunden) {
@@ -751,12 +844,13 @@ if ($stationgefunden) {
 
     echo "<br><br>";
 
-    $dateiname = "orte/$stationgefunden.txt";
-    if (file_exists($dateiname)) {
-        $filename = file("$dateiname");
+    $safe_stationgefunden = preg_replace("/[^0-9]/", "", $stationgefunden);
+    $dateiname = "orte/" . $safe_stationgefunden . ".txt";
+
+    if (!empty($safe_stationgefunden) && file_exists($dateiname)) {
+        $filename = file($dateiname);
         foreach ($filename as $line) {
-            // Hier wird der Inhalt aus der Stationsdatei sicher gesäubert ausgegeben
-            echo sanitize_html_content($line);
+            echo $line;
         }
     } else {
         $default = "bilder/bilder/default.jpg";
@@ -853,49 +947,90 @@ if ($stationgefunden) {
 
         $i = 0;
         $ortegefunden = [];
+        foreach ($zeilen as $a) {
+            if (strlen($a) == 7) {
+                $hex = substr($a, 0, 2) . substr($a, 3, 1) . substr($a, 5, 2);
+                $checkdez = substr($a, 2, 1) . substr($a, 4, 1);
+                $dez = base_convert($hex, 16, 10);
+                $checkmodulo = $dez % $sevenmodulo;
 
-foreach ($zeilen as $a) {
-    if (strlen($a) == 7) {
-        $hex = substr($a, 0, 2) . substr($a, 3, 1) . substr($a, 5, 2);
-        $checkdez = substr($a, 2, 1) . substr($a, 4, 1);
-        $dez = base_convert($hex, 16, 10);
-        $checkmodulo = $dez % $sevenmodulo;
+                if ($checkmodulo == $checkdez) {
+                    $xxxx = base_convert($hex, 16, 30);
+                    $xxxx = sprintf("%04s", $xxxx);
+                    $ergebnis = xxxxtocode($xxxx);
 
-        if ($checkmodulo == $checkdez) {
-            $xxxx = base_convert($hex, 16, 30);
-            $xxxx = sprintf("%04s", $xxxx);
-            $temp_datum = xxxxtoday($xxxx);
-            $daily_shuffle = get_dynamic_shuffle($temp_datum);
-            $ergebnis = xxxxtocode($xxxx, $daily_shuffle);
-            $s = codetoxxxx($ergebnis, $daily_shuffle);
-            $ergebnisdatum = xxxxtoday($s);
-            $ergebniszeit = xxxxtotime($s);
-            $ergebniswtag = wochentag($ergebnisdatum);
-            $string = xxxxtostring($s);
-            $zeile = explode(";", $string);
-            $stationsnummer = $zeile[0];
-            $stationsname = $listname[$stationsnummer] ?? 'Unbekannt';
+                    $s = codetoxxxx($ergebnis);
+                    $ergebnisdatum = xxxxtoday($s);
+                    $ergebniszeit = xxxxtotime($s);
+                    $ergebniswtag = wochentag($ergebnisdatum);
+                    $string = xxxxtostring($s);
+                    $zeile = explode(";", $string);
+                    $stationsnummer = $zeile[0];
+                    $stationsname = $listname[$stationsnummer];
 
-            array_push($ortegefunden, "$stationsnummer");
+                    array_push($ortegefunden, "$stationsnummer");
 
-            if (!isset($eintraggefunden)) {
-                $eintraggefunden = true;
-                echo "<b>Deine gefundenen Orte:</b>";
-                echo "<ul>";
+                    if (!isset($eintraggefunden)) {
+                        $eintraggefunden = true;
+                        echo "<b>Deine gefundenen Orte:</b>";
+                        echo "<ul>";
+                    }
+                    echo "<li>";
+                    echo "<b>" .
+                        htmlspecialchars(
+                            $stationsname ?? "",
+                            ENT_QUOTES,
+                            "UTF-8"
+                        ) .
+                        "</b>&nbsp;";
+                    echo htmlspecialchars(
+                        $text[$stationsnummer] ?? "",
+                        ENT_QUOTES,
+                        "UTF-8"
+                    ) . "&nbsp;";
+
+                    $safe_lat = htmlspecialchars(
+                        $lat[$stationsnummer] ?? "",
+                        ENT_QUOTES,
+                        "UTF-8"
+                    );
+                    $safe_lon = htmlspecialchars(
+                        $lon[$stationsnummer] ?? "",
+                        ENT_QUOTES,
+                        "UTF-8"
+                    );
+
+                    echo '<a href="Karte_' .
+                        $safe_lat .
+                        "_" .
+                        $safe_lon .
+                        '"><img src="bilder/bilder/blue-small.png"></a>&nbsp;';
+                    echo '<a href="https://maps.google.com/maps?q=' .
+                        $safe_lat .
+                        "," .
+                        $safe_lon .
+                        '"><img src="bilder/bilder/maps.png"></a>';
+                    echo '<a href="geo:' .
+                        $safe_lat .
+                        "," .
+                        $safe_lon .
+                        '"><img src="bilder/bilder/geo.jpg" alt="Smartphone Navigation" style="width:20px; height:auto;"></a>&nbsp;';
+
+                    echo htmlspecialchars($ergebniswtag, ENT_QUOTES, "UTF-8") .
+                        ". " .
+                        htmlspecialchars($ergebnisdatum, ENT_QUOTES, "UTF-8") .
+                        ", " .
+                        htmlspecialchars($ergebniszeit, ENT_QUOTES, "UTF-8") .
+                        ", ";
+                    echo '<b><a href="' .
+                        htmlspecialchars($a, ENT_QUOTES, "UTF-8") .
+                        '">' .
+                        htmlspecialchars($ergebnis, ENT_QUOTES, "UTF-8") .
+                        "</a></b> ";
+                    echo "</li>";
+                }
             }
-            echo "<li>";
-            echo "<b>" . $stationsname . "</b>&nbsp;";
-            echo ($text[$stationsnummer] ?? '') . "&nbsp;";
-            echo '<a href="Karte_' . ($lat[$stationsnummer] ?? '') . "_" . ($lon[$stationsnummer] ?? '') . '"><img src="bilder/bilder/blue-small.png"></a>&nbsp;';
-            echo '<a href="https://maps.google.com/maps?q=' . ($lat[$stationsnummer] ?? '') . "," . ($lon[$stationsnummer] ?? '') . '"><img src="bilder/bilder/maps.png"></a>';
-            echo '<a href="geo:' . ($lat[$stationsnummer] ?? '') . "," . ($lon[$stationsnummer] ?? '') . '"><img src="bilder/bilder/geo.jpg" alt="Smartphone Navigation" style="width:20px; height:auto;"></a>&nbsp;';
-            echo $ergebniswtag . ". " . $ergebnisdatum . ", " . $ergebniszeit . ", ";
-            echo '<b><a href="' . $a . '">' . $ergebnis . "</a></b> ";
-            echo "</li>";
         }
-    }
-}
-
 
         echo "</ul>";
 
@@ -912,22 +1047,44 @@ foreach ($zeilen as $a) {
                 echo "<ul>";
                 foreach ($diff as $eintrag) {
                     echo "<li>";
-                    echo "<b>" . $station[$eintrag] . "</b>&nbsp;";
-                    echo $text[$eintrag] . "&nbsp;";
+                    echo "<b>" .
+                        htmlspecialchars(
+                            $station[$eintrag] ?? "",
+                            ENT_QUOTES,
+                            "UTF-8"
+                        ) .
+                        "</b>&nbsp;";
+                    echo htmlspecialchars(
+                        $text[$eintrag] ?? "",
+                        ENT_QUOTES,
+                        "UTF-8"
+                    ) . "&nbsp;";
+
+                    $safe_lat_diff = htmlspecialchars(
+                        $lat[$eintrag] ?? "",
+                        ENT_QUOTES,
+                        "UTF-8"
+                    );
+                    $safe_lon_diff = htmlspecialchars(
+                        $lon[$eintrag] ?? "",
+                        ENT_QUOTES,
+                        "UTF-8"
+                    );
+
                     echo '<a href="Karte_' .
-                        $lat[$eintrag] .
+                        $safe_lat_diff .
                         "_" .
-                        $lon[$eintrag] .
+                        $safe_lon_diff .
                         '"><img src="bilder/bilder/blue-small.png"></a>';
                     echo '<a href="https://maps.google.com/maps?q=' .
-                        $lat[$eintrag] .
+                        $safe_lat_diff .
                         "," .
-                        $lon[$eintrag] .
+                        $safe_lon_diff .
                         '"><img src="bilder/bilder/maps.png"></a>';
                     echo '<a href="geo:' .
-                        $lat[$eintrag] .
+                        $safe_lat_diff .
                         "," .
-                        $lon[$eintrag] .
+                        $safe_lon_diff .
                         '"><img src="bilder/bilder/geo.jpg" alt="Smartphone Navigation" style="width:20px; height:auto;"></a>&nbsp;';
 
                     echo "</li>";
@@ -1037,4 +1194,5 @@ foreach ($zeilen as $a) {
 }
 $headerContent = file_get_contents("config/startseite-footer.txt");
 echo $headerContent;
+
 ?>
