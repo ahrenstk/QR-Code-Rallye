@@ -1,0 +1,32 @@
+[20-Oct-2026 07:30:23 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: substr(): Argument #3 ($length) must be of type ?int, false given in /var/www/virtual/nil/html/QR-Code-Rallye/qr.php:114
+Stack trace:
+#0 /var/www/virtual/nil/html/QR-Code-Rallye/qr.php(114): substr('/QR-Code-Rallye...', 0, false)
+#1 {main}
+  thrown in /var/www/virtual/nil/html/QR-Code-Rallye/qr.php on line 114
+[20-Oct-2026 07:30:32 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: substr(): Argument #3 ($length) must be of type ?int, false given in /var/www/virtual/nil/html/QR-Code-Rallye/qr.php:114
+Stack trace:
+#0 /var/www/virtual/nil/html/QR-Code-Rallye/qr.php(114): substr('/QR-Code-Rallye...', 0, false)
+#1 {main}
+  thrown in /var/www/virtual/nil/html/QR-Code-Rallye/qr.php on line 114
+[20-Oct-2026 07:48:05 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function xxxxtocode(), 1 passed in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 860 and exactly 2 expected in /var/www/virtual/nil/html/QR-Code-Rallye/index.php:189
+Stack trace:
+#0 /var/www/virtual/nil/html/QR-Code-Rallye/index.php(860): xxxxtocode('sk14')
+#1 {main}
+  thrown in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 189
+[20-Oct-2026 07:48:13 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function xxxxtocode(), 1 passed in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 684 and exactly 2 expected in /var/www/virtual/nil/html/QR-Code-Rallye/index.php:189
+Stack trace:
+#0 /var/www/virtual/nil/html/QR-Code-Rallye/index.php(684): xxxxtocode('hr5d')
+#1 {main}
+  thrown in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 189
+[21-Oct-2026 06:27:02 Europe/Berlin] PHP Warning:  Undefined variable $b in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 431
+[21-Oct-2026 06:27:02 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: preg_match(): Argument #2 ($subject) must be of type string, null given in /var/www/virtual/nil/html/QR-Code-Rallye/index.php:431
+Stack trace:
+#0 /var/www/virtual/nil/html/QR-Code-Rallye/index.php(431): preg_match('/^[123456789acd...', NULL)
+#1 {main}
+  thrown in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 431
+[21-Oct-2026 06:27:24 Europe/Berlin] PHP Warning:  Undefined variable $b in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 431
+[21-Oct-2026 06:27:24 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: preg_match(): Argument #2 ($subject) must be of type string, null given in /var/www/virtual/nil/html/QR-Code-Rallye/index.php:431
+Stack trace:
+#0 /var/www/virtual/nil/html/QR-Code-Rallye/index.php(431): preg_match('/^[123456789acd...', NULL)
+#1 {main}
+  thrown in /var/www/virtual/nil/html/QR-Code-Rallye/index.php on line 431
