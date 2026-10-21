@@ -38,28 +38,6 @@ Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents
 
 ---
 
-## ⚙️ Wie es funktioniert
-
-### 1. Codegenerierung & Entschlüsselung
-Ein Zustand einer Station setzt sich zusammen aus:
-$$\text{Station-ID (0–89)} \quad|\quad \text{Aktionstag} \quad|\quad \text{Stunde (0–23)} \quad|\quad \text{10-Minuten-Block (0–5)}$$
-
-Daraus wird eine eindeutige Ganzzahl berechnet:
-$$\text{Code-Basis} = 9000 \times \text{Station} + 1500 \times \text{10-Min-Block} + \text{Tag} \times 24 + \text{Stunde}$$
-
-* Dieser Wert wird im **30er-Zahlensystem (Base30)** kodiert.
-* Anschließend erfolgt eine Permutation der Zeichen (`[0, 3, 2, 1]`) und ein dynamischer Versatz anhand des aktuellen Datums und eines geheimen Schlüssels (`secret`).
-* Das Ergebnis ist ein 4-stelliger Buchstabencode (z. B. `A7XK`), der vor Ort angezeigt oder eingegeben wird.
-
-### 2. QR-Code-Validierung (`seven`-Code)
-Wird ein QR-Code gescannt, enthält die URL einen 7-stelligen Token:
-* 5 Hex-Zeichen für den Zustand.
-* 2 Prüfziffern, basierend auf einer Modulo-Operation (`$sevenmodulo`).
-* Erst bei erfolgreicher Modulo-Validierung wird die Station als besucht gewertet und im Profil hinterlegt.
-
-
----
-
 ## 🛠️ Konfigurationen
 
 Die Konfigurationen erfolgen in den Ordnern `orte`, `bilder`sowie `config`
