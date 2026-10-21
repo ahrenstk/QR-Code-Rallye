@@ -28,7 +28,7 @@ Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents
   * Login rein über frei wählbaren Benutzernamen (keine E-Mail- oder Passwort-Registrierung nötig).
   * Übersicht aller bereits besuchten Orte inklusive Zeitstempel.
   * Liste noch fehlender Stationen mit direkter Navigation (Google Maps, OpenStreetMap/Geo-URI).
-  * durch Änderung im Code kann diese Funktion leicht deaktiviert werden (beim Fastenmarsch 2021 war es nicht verfügbar)
+  * durch Änderung im Code kann die Benutzerverwaltung leicht deaktiviert werden (beim Fastenmarsch 2021 war sie nicht verfügbar)
 * **Flat-File-Architektur:** Speicherung erfolgt komplett dateibasiert (Textdateien) – keine MySQL- oder PostgreSQL-Datenbank erforderlich.
 * **Web-Framework:** Verwendung des einfachen Web-Frameworks [W3.CSS](https://www.w3schools.com/w3css)
 * **Admin-Tools:**
