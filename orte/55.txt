@@ -1,0 +1,2 @@
+<img src="bilder/55/55.jpg" class="w3-image center">
+<br><br>

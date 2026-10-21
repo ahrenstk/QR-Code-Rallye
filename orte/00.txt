@@ -1,0 +1,64 @@
+               <img src="bilder/00/00.png" class="w3-image center">
+<br><br>
+Schön, dass du unseren virtuellen <b>Beispielort</b>, den <b>Marktplatz</b> der <a href="https://www.bourtange.nl">Festung Bourtange</a> (<a href="https://de.wikipedia.org/wiki/Bourtange">Wikipedia</a>) besuchst und das ohne auch nur einen Meter mit dem Fahrrad oder zu Fuß zurückgelegt zu haben. 
+An dem Beispielort möchten wir dir den Ablauf der QR-Code-Rallye noch einmal genauer erklären. <br><br>
+
+<b>Was ist die QR-Code-Rallye</b><br>
+Die QR-Code-Rallye ist eine digitale Schnitzeljagd ähnlich dem Geocaching. Du kannst viele geheimnisvolle Orte kennenlernen und deinen Besuch digital protokollieren. 
+<br><br>
+
+<b>Vorbereitung</b><br>
+Denk dir einen mindestens 8-stellige Benutzernamen mit mindestens 2 Buchstaben und 2 Zahlen aus, den niemand anderes kennt. Mit dem Benutzernamen kannst du deine gefundenen Orte und Zeitstempel online verwalten. 
+Dein Smartphone muss über mobiles Internet und einen QR-Code-Scanner verfügen. iOS enthält einen QR-Code-Scanner. Einige Android-Apps findest du 
+<a href="https://play.google.com/store/search?q=qr-code&c=apps&hl=de" target="_parent">hier</a>.
+<br><br>
+
+<b>Orte besuchen</b><br>
+Du kannst die Orte an allen Tagen des Aktionszeitraums in beliebiger Reihenfolge besuchen. 
+Du findest die Orte sowohl zuhause und unterwegs über die <a href="./">Startseite</a> und dann <a href="Orte">Orte</a>, <a href="Karte">Karte</a> oder in deinem Benutzerprofil. 
+Auch geben wir dir für jeden Ort einen kleinen Hinweis, um die Suche zu erleichtern.
+Unterwegs kannst du über <img src="bilder/bilder/blue-small.png"> <img src="bilder/bilder/maps.png"> oder <img src="bilder/bilder/ziel-small.jpg"> zur Smartphone - Navigation wechseln. 
+Alternativ kannst du auch eine Navigationssoftware wie z. B. OsmAnd mit GPX-Wegpunkten verwenden. Eine Anleitung findest du <a href="Navigation">hier</a>.
+
+
+<br><br>
+<b>Vor Ort</b><br>
+Suche vor Ort den QR-Code und scanne ihn.
+<br><br> 
+<center><b>QR-Code Beispiel</b></center>
+<img src="bilder/bilder/Beispielort.png" class="w3-image center "><br>
+<center><b>https://</b></center>
+
+<br><br>
+<b>Aufruf der Internetseite</b><br>
+Über den Aufruf der Seite erhältst du immer ganz oben links auf der Seite deinen individuellen Zeitstempel, der sich aus dem Ort, dem Tagesdatum und dem Zeitpunkt (10-Minuten-Intervall) zusammensetzt. 
+<br><br>
+<button class="w3-button w3-hover-teal w3-teal w3-round">0 0 0 0</button>
+<br><br>
+
+Unten auf der Seite kannst du deinen Benutzernamen eingeben und dein Besuch deinem Benutzerprofil hinzufügen.
+<br><br>
+<img src="bilder/bilder/besuch.png" class="w3-image">
+<br><br>
+
+<b>Zurück von der QR-Code-Rallye</b><br> 
+Wenn du dann von deiner Tour zurück bist, kannst du die Zeitstempel/Ort-Kombinationen oder deinen Benutzernamen eingeben, um deine Daten zu überprüfen.
+Bitte merk dir deinen Benutzernamen gut und gib ihn nicht an deine Freunde weiter.
+<br><br>
+
+Wir wünschen dir viel Spaß bei der QR-Code-Rallye.
+
+<br><br><br>
+Der <b>Marktplatz</b> befindet sich im Zentrum der <b>Festung Bourtange</b>.
+
+<br><br><br>
+<img src="bilder/bilder/demo-bourtange-drohne.png" class="w3-image center ">
+<br>
+
+
+
+
+
+
+
+

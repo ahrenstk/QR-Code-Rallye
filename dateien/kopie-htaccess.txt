@@ -1,0 +1,37 @@
+RewriteEngine On
+
+# Umleitungen
+RewriteRule ^Datenschutz$ datenschutz.php [NC,L]
+RewriteRule ^Impressum$ impressum.php [NC,L]
+RewriteRule ^Karte$ karte.php [NC,L]
+RewriteRule ^Koordinaten$ koordinaten.php [NC,L]
+RewriteRule ^Navigation$ navigation.php [NC,L]
+RewriteRule ^Orte$ orte.php [NC,L]
+RewriteRule ^Aktion$ aktion.php [NC,L]
+RewriteRule ^Unterwegs$ unterwegs.php [NC,L]
+RewriteRule ^demo$ demo.php [NC,L]
+RewriteRule ^admininfo admininfo.php [NC,L]
+RewriteRule ^gpx$ gpx.php [NC,L]
+RewriteRule ^admin$ admin.php [NC,L]
+RewriteRule ^tiny$ tiny.php [NC,L]
+
+# QR-Codes und Hauptseite
+RewriteRule ^([a-zA-Z0-9]*)_qr$ qr.php?a=$1 [NC,L,QSA]
+RewriteRule ^([a-zA-Z0-9]*)$ index.php?a=$1 [NC,L,QSA]
+
+# Administration
+RewriteRule ^([a-zA-Z0-9]*)_([a-zA-Z0-9öäüßÄÜÖ]*)$ index.php?a=$1&b=$2 [NC,L,QSA]
+RewriteRule ^([a-zA-Z0-9]*)_([0-9]*)_([0-9.]*)_([0-9]*)_([0-9]*)$ index.php?a=$1&b=$2&c=$3&d=$4&e=$5 [NC,L,QSA]
+
+# Karte
+RewriteRule ^Karte_([Z0-9.]*)_([0-9.]*)$ karte.php?a=$1&b=$2 [NC,L,QSA]
+
+AddDefaultCharset UTF-8
+
+
+# erlaubte PHP-Dateien
+RewriteCond %{REQUEST_FILENAME} \.php
+RewriteCond %{REQUEST_FILENAME} !/(index|aktion|datenschutz|impressum|\
+karte|koordinaten|navigation|orte|admin|\
+qr|qr-generator|demo|gpx|admininfo|unterwegs|tiny)\.php$
+RewriteRule . - [F,L]

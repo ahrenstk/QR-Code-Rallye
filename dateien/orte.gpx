@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="QR-Code-Rallye" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="53.0075212" lon="7.19172120">
+<name>Festungsmühle</name>
+</wpt>
+<wpt lat="53.0067618" lon="7.18987584">
+<name>Bastion</name>
+</wpt>
+<wpt lat="53.0059621" lon="7.19161391">
+<name>Neues Munitionslager</name>
+</wpt>
+<wpt lat="53.0058968" lon="7.19377376">
+<name>Kanone</name>
+</wpt>
+<wpt lat="53.0071468" lon="7.19315886">
+<name>Altes Munitionslager</name>
+</wpt>
+</gpx>

@@ -1,0 +1,6 @@
+00;QR-Code-Rallye - Beispielort;53.0067497;7.19208061;Marktplatz;
+11;Festungsmühle;53.0075212;7.19172120;Schautafel;
+22;Bastion;53.0067618;7.18987584;Schau im Gebäude;
+33;Neues Munitionslager;53.0059621;7.19161391;Brunnen;
+44;Kanone;53.0058968;7.19377376;Bei der Bank;
+55;Altes Munitionslager;53.0071468;7.19315886;Schautafel;
