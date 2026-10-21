@@ -50,7 +50,7 @@ Die Konfigurationen erfolgen in den Ordnern `orte`, `bilder`sowie `config`
 
 * **Keine Tracking-Cookies:** Die Anwendung setzt keine Cookies zur Profilverfolgung ein.
 * **Pseudonyme Profile:** Teilnehmer wählen einen Benutzernamen zur serverseitigen Speicherung ihrer Zeitstempel aus (optionnal)
-* 
+  
 ---
 
 ## 📄 Lizenz
