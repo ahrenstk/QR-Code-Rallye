@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="de">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="">
+      <title>Datenschutz</title>
+      <link rel="icon" type="image/png" href="bilder/bilder/icon.png"/>
+      <link rel="stylesheet" href="css/w3.css">
+      <link rel="stylesheet" href="css/qr-code-rallye.css">
+      <script src="js/qr-code-rallye.js"></script>
+   </head>
+   <body>
+      <div class="w3-top content w3-display-topmiddle">
+         <div class="w3-bar w3-white w3-card">
+            <a class="w3-button w3-padding-large w3-hide-large w3-right w3-hover-white" href="#" onclick="myFunction()">
+               <svg viewBox="0 0 50 40" width="20" height="30">
+                  <rect width="30" height="5"></rect>
+                  <rect y="15" width="30" height="5"></rect>
+                  <rect y="30" width="30" height="5"></rect>
+               </svg>
+            </a>
+            <a href="."><img src="bilder/bilder/icon.png" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large "></a>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-small w3-hide-medium">Datenschutz</div>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-large">Datenschutz</div>               
+            <div class="w3-right w3-hide-small w3-hide-medium">
+               <a href="Karte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Karte</a>
+   <a href="Orte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Orte</a>
+     <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Unterwegs</a> 
+            </div>
+         </div>
+      </div>
+      <div id="nav" class="w3-bar-block w3-white w3-hide w3-hide-large  w3-top" style="margin-top:46px">
+         <a href="." class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Startseite</a>
+         <a href="Karte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Karte</a>
+         <a href="Orte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Orte</a>
+         <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Unterwegs</a>
+
+      </div>
+      <div class="w3-content content">
+         <div class="w3-row w3-padding-64">
+            <div class="w3-col m12 w3-padding-large">
+
+               <b>Datenschutz</b>
+               <br>
+               Wir freuen uns über Ihren Besuch auf unseren Webseiten. Nachfolgend möchten wir Sie über den Umgang mit Ihren Daten gem. § 15 Gesetz über den Datenschutz informieren.
+               <br><br>
+    
+               <b>Keine Cookies</b><br>
+               Unsere Webseite verwendet keine Cookies. Es werden keine Informationen auf Ihrem Gerät gespeichert, die Ihre Nutzung unserer Webseite verfolgen oder analysieren.
+            <br><br>
+               <b>OpenStreetMap</b><br>
+            Diese Webseite nutzt die Kartendaten von OpenStreetMap, um Ihnen eine interaktive Kartenansicht zu bieten. 
+            Bei der Nutzung von OpenStreetMap können Daten über Ihre Nutzung der Kartenfunktionen an OpenStreetMap übermittelt werden. Weitere Informationen finden Sie in den Nutzungsbedingungen von OpenStreetMap.
+              <br><br> 
+            <b>Zeitstempel</b><br> 
+            Bei Ihrem Besuch von Orten auf unserer Webseite wird ein 4-stelliger Zeitstempel generiert, der den Zeitpunkt Ihres Besuchs dokumentiert. Eine Speicherung erfolgt nicht.
+            Dieser Zeitstempel hilft uns, die Nutzung unserer Webseite zu analysieren und zu verbessern.
+                   <br><br> 
+            <b>Speicherung der Zeitstempel</b><br> 
+            Die generierten Zeitstempel können in Ihrem Benutzerprofil gespeichert werden. Diese Speicherung erfolgt ausschließlich zu internen Zwecken und wird nicht an Dritte weitergegeben.
+            Die Speicherung erfolgt in Form einer Hashfunktion. Es ist nicht möglich aus dem Hashwert den Benutzernamen zu ermitteln.
+ <br><br>
+
+               <b>Verantwortlicher</b><br>
+               Verantwortlich für die nachfolgend dargestellte Datenerhebung und Verarbeitung ist die im <a href="Impressum">Impressum</a> genannte Stelle.
+               <br><br>
+               <b>Speicherung der IP-Adresse</b><br>
+               Wir speichern die von Ihrem Webbrowser übermittelte IP-Adresse streng zweckgebunden für die Dauer von sieben Tagen, in dem Interesse, Angriffe auf unsere Webseiten erkennen, eingrenzen und beseitigen zu können. Nach Ablauf dieser Zeitspanne löschen bzw. anonymisieren wir die IP-Adresse. Rechtsgrundlage ist § 6 Abs. 1 lit. g KDG.
+               <br><br>
+               <b>Nutzungsdaten</b><br>
+               Wenn Sie unsere Webseiten besuchen, werden auf unserem Webserver temporär sogenannte Nutzungsdaten zu statistischen Zwecken als Protokoll gespeichert, um die Qualität unserer Webseiten zu verbessern. Dieser Datensatz besteht aus
+               <br>
+               der Seite, von der aus die Datei angefordert wurde,<br>
+               dem Namen der Datei,<br>
+               dem Datum und der Uhrzeit der Abfrage,<br>
+               der übertragenen Datenmenge,<br>
+               dem Zugriffsstatus (Datei übertragen, Datei nicht gefunden),<br>
+               der Beschreibung des Typs des verwendeten Webbrowsers,<br>
+               der IP-Adresse des anfragenden Rechners, die so verkürzt wird, dass ein Personenbezug nicht mehr herstellbar ist.<br>
+               Die genannten Protokolldaten werden nur anonymisiert gespeichert.<br>
+               <br>
+               <b>Datenübermittlung an Dritte</b><br>
+               Für die Software ist eine Übermittlung an Dritten nicht notwendig und auch nicht möglich. Es werden keine Daten erfasst. 
+               <br><br>
+               <b>Ihre Rechte als Nutzer</b>
+               <br>
+               Bei Verarbeitung Ihrer personenbezogenen Daten gew&auml;hrt das KDG Ihnen als Webseitennutzer bestimmte Rechte:
+               <br><br>
+               <b>1. Auskunftsrecht (§ 17 KDG):</b><br>
+               Sie haben das Recht eine Bestätigung darüber zu verlangen, ob sie betreffende personenbezogene Daten verarbeitet werden; ist dies der Fall, so haben Sie ein Recht auf Auskunft über diese personenbezogenen Daten und auf die in § 17 KDG im einzelnen aufgeführten Informationen.
+               <br>
+               <b>2. Recht auf Berichtigung und Löschung (§ 18, 19 KDG):</b><br>
+               Sie haben das Recht, unverzüglich die Berichtigung sie betreffender unrichtiger personenbezogener Daten und ggf. die Vervollständigung unvollständiger personen-bezogener Daten zu verlangen. Sie haben zudem das Recht, zu verlangen, dass sie betreffende personenbezogene Daten unverzüglich gelöscht werden, sofern einer der in § 19 KDG im einzelnen aufgeführten Gründe zutrifft, z. B. wenn die Daten für die verfolgten Zwecke nicht mehr benötigt werden.
+               <br>
+               <b>3. Recht auf Einschränkung der Verarbeitung (§ 20 KDG):</b><br>
+               Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen, wenn eine der in § 20 KDG aufgeführten Voraussetzungen gegeben ist, z. B. wenn Sie Widerspruch gegen die Verarbeitung eingelegt haben, für die Dauer einer etwaigen Prüfung.
+               <br>
+               <b>4. Recht auf Datenübertragbarkeit (§ 22 KDG):</b><br>
+               In bestimmten Fällen, die in § 22 KDG im Einzelnen aufgeführt werden, haben Sie das Recht, die sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten bzw. die Übermittlung dieser Daten an einen Dritten zu verlangen.
+               <br>
+               <b>5. Widerspruchsrecht (§ 20 KDG):</b><br>
+               Werden Daten auf Grundlage von § 6 Abs. 1 lit. b KDG (Einwilligung) oder § 6 Abs. 1 lit. g KDG erhoben (Datenverarbeitung zur Wahrung berechtigter Interessen), steht Ihnen das Recht zu, aus Gründen, die sich aus Ihrer besonderen Situ-ation ergeben, jederzeit gegen die Verarbeitung Widerspruch einzulegen. Wir verarbeiten die personenbezogenen Daten dann nicht mehr, es sei denn, es liegen nachweisbar zwingende schutzwürdige Gründe für die Verarbeitung vor, die die Interessen, Rechte und Freiheiten der betroffenen Person überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
+               <br>
+               <b>6. Beschwerderecht bei einer Aufsichtsbehörde:</b><br>
+               Sie haben das Recht auf Beschwerde bei einer Aufsichtsbehörde, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden Daten gegen datenschutzrechtliche Bestimmungen verstößt. Für die ... ist ... zuständig.
+
+               <br><br>
+               <b>Kontaktdaten des Datenschutzbeauftragten</b><br>
+               Unser betrieblicher Datenschutzbeauftragter steht Ihnen gerne für Auskünfte oder Anregungen zum Thema Datenschutz zur Verfügung:
+               <br><br>
+               <b>Datenschutzbeauftragter:</b><br>
+               Vorname<br>
+               Firma<br>
+               Straße<br>
+               PLZ Ort<br>
+               Telefonnummer<br>
+               E-Mail-Adresse<br>
+               <br><br><br>
+               <img src="bilder/bilder/demo-bourtange.jpg" class="w3-image center ">
+               <br>
+               <br> <br><br>
+               <footer>
+                  <div class="w3-buttom content">
+                     <div class="w3-bar w3-white">
+                        <div class="w3-left">
+                           &copy; <a href="." style="text-decoration: none">QR-Code-Rallye</a>
+                        </div>
+                        <div class="w3-right w3-white">
+                            <a href="Impressum" style="text-decoration: none">Impressum</a>
+                            <a href="Datenschutz" style="text-decoration: none">Datenschutz</a>
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+

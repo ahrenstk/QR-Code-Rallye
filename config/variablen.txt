@@ -1,0 +1,17 @@
+titelkurz=QR-Code-Rallye
+titellang=QR-Code-Rallye
+secret=demo
+stationoffset=42
+shuffle=10
+sevenmodulo=100
+adminpasswort=passwort
+aktionsende=false
+beginnaktion=01.10.2026
+endeaktion=30.11.2026
+breite = 53.006727
+laenge = 7.192089
+zoom1=17
+zoom2=18
+kartenhinweis=false
+aktionsende=false
+meinname=meinname42

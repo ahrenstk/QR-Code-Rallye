@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="de">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="">
+      <title>Demodaten</title>
+      <link rel="icon" type="image/png" href="bilder/bilder/icon.png"/>
+      <link rel="stylesheet" href="css/w3.css">
+      <link rel="stylesheet" href="css/qr-code-rallye.css">
+      <script src="js/qr-code-rallye.js"></script>
+   </head>
+   <body>
+      <div class="w3-top content w3-display-topmiddle">
+         <div class="w3-bar w3-white w3-card">
+            <a class="w3-button w3-padding-large w3-hide-large w3-right w3-hover-white" href="#" onclick="myFunction()">
+               <svg viewBox="0 0 50 40" width="20" height="30">
+                  <rect width="30" height="5"></rect>
+                  <rect y="15" width="30" height="5"></rect>
+                  <rect y="30" width="30" height="5"></rect>
+               </svg>
+            </a>
+            <a href="."><img src="bilder/bilder/icon.png" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large "></a>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-small w3-hide-medium">Demo-Zugangsdaten</div>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-large">Demo</div>               
+            <div class="w3-right w3-hide-small w3-hide-medium">
+               <a href="Karte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Karte</a>
+   <a href="Orte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Orte</a>
+   <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Unterwegs</a>
+            </div>
+         </div>
+      </div>
+      <div id="nav" class="w3-bar-block w3-white w3-hide w3-hide-large  w3-top" style="margin-top:46px">
+         <a href="." class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Startseite</a>
+   <a href="Karte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Karte</a>
+    <a href="Orte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Orte</a>  
+        <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Unterwegs</a>  
+      </div>
+      <div class="w3-content content">
+         <div class="w3-row w3-padding-64">
+            <div class="w3-col m12 w3-padding-large">
+              
+              
+              <b>Test der Anwendung:</b><br>
+              Diese Seite existiert nur zum Test der Anwendung und gibt es in der produktiven Version für Anwender nicht. <br><br>
+              Die geheimnisvollen Orte der Testversion befinden sich auf der <a href="https://www.bourtange.nl">Festung Bourtange</a> in den Niederlanden an der Grenze zu Deutschland (Emsland).
+              Natürlich findet hier keine echte QR-Code-Rallye statt. Aber Bourtange ist immer eine Reise wert.
+              
+
+              <br><br>
+              An jedem Ort würde sich ein QR-Code befinden (s.u.), den die Teilnemer finden und mit dem Smartphone scannen müssten. Sie erhalten einen 
+               individuellen 4-stelligen Zeitstempel, der nur für diesen Ort, für den jeweiligen Tag und das aktuelle 10-Minuten-Zeitintervall des Besuchs gültig ist. 
+              Den 4-stelligen Zeitstempel können mit einem beliebigen Benutzernamen verknüpft werden.<br>
+          
+<br>
+Klicke auf die Links, um die individuelle Webseite oder den zugehörigen QR-Code aufzurufen:
+
+<br><br>
+<div class="w3-col m12 w3-padding-large">
+ 00;QR-Code-Rallye - Beispielort;53.0067497;7.19208061;Marktplatz;
+ <a href="./dad22">dad22</a> <a href="./dad22_qr">dad22_qr</a><a href="Karte_53.0067497_7.19208061"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;<a href="https://maps.google.com/maps?q=53.0067497,7.19208061"><img src="bilder/bilder/maps.png"></a><a href="geo:53.0067497,7.19208061"><img src="bilder/bilder/geo.jpg"></a><br>11;Festungsmühle;53.0075212;7.19172120;Schautafel;
+ <a href="./b5e8a">b5e8a</a> <a href="./b5e8a_qr">b5e8a_qr</a><a href="Karte_53.0075212_7.19172120"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;<a href="https://maps.google.com/maps?q=53.0075212,7.19172120"><img src="bilder/bilder/maps.png"></a><a href="geo:53.0075212,7.19172120"><img src="bilder/bilder/geo.jpg"></a><br>22;Bastion;53.0067618;7.18987584;Schau im Gebäude;
+ <a href="./e967c">e967c</a> <a href="./e967c_qr">e967c_qr</a><a href="Karte_53.0067618_7.18987584"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;<a href="https://maps.google.com/maps?q=53.0067618,7.18987584"><img src="bilder/bilder/maps.png"></a><a href="geo:53.0067618,7.18987584"><img src="bilder/bilder/geo.jpg"></a><br>33;Neues Munitionslager;53.0059621;7.19161391;Brunnen;
+ <a href="./f66c0">f66c0</a> <a href="./f66c0_qr">f66c0_qr</a><a href="Karte_53.0059621_7.19161391"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;<a href="https://maps.google.com/maps?q=53.0059621,7.19161391"><img src="bilder/bilder/maps.png"></a><a href="geo:53.0059621,7.19161391"><img src="bilder/bilder/geo.jpg"></a><br>44;Kanone;53.0058968;7.19377376;Bei der Bank;
+ <a href="./f8cf6">f8cf6</a> <a href="./f8cf6_qr">f8cf6_qr</a><a href="Karte_53.0058968_7.19377376"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;<a href="https://maps.google.com/maps?q=53.0058968,7.19377376"><img src="bilder/bilder/maps.png"></a><a href="geo:53.0058968,7.19377376"><img src="bilder/bilder/geo.jpg"></a><br>55;Altes Munitionslager;53.0071468;7.19315886;Schautafel; <a href="./91cf5">91cf5</a> <a href="./91cf5_qr">91cf5_qr</a><a href="Karte_53.0071468_7.19315886"> <img src="bilder/bilder/blue-small.png"></a>&nbsp;<a href="https://maps.google.com/maps?q=53.0071468,7.19315886"><img src="bilder/bilder/maps.png"></a><a href="geo:53.0071468,7.19315886"><img src="bilder/bilder/geo.jpg"></a><br><br><br>         <img src="bilder/bilder/demo-bourtange-drohne.png" class="w3-image center "><br><br><div class="w3-buttom content">
+
+            <br><br>
+            <b>Ziel</b><br>
+            Ziel ist es möglichst viele Orte zu besuchen, dort die QR-Codes zu scannen und die zeit- und ortbezogenen individuellen 4-stelligen Zeitstempel/Ort-Kombinationen zu notieren oder in einem Benutzerprofil abzuspeichern.
+
+           <br><br>   
+           <b>Ausdruck QR-Codes</b><br>
+           Anstatt jeden QR-Code mit Ort und Internetadresse auf DIN-A4 auszudrucken, können die Bilder der QR-Codes z. B. in die Tabelle einer Textverarbeitung kopiert und gemeinsam ausgedruckt werden.
+           <br><br>
+
+   
+
+
+                         
+            <br><br>
+        Weitere Informationen zur Installation, Konfiguration und Betrieb der Anwendung gibt es in der <a href="admininfo">Anleitung für Administratoren</a>.       
+<br><br>
+  
+
+ 
+                <br><br><br>
+                <img src="bilder/bilder/demo-bourtange.jpg" class="w3-image center ">
+                <br><br><br>
+                  <div class="w3-buttom content">
+                     <div class="w3-bar w3-white">
+                        <div class="w3-left">
+                           &copy; <a href="." style="text-decoration: none">QR-Code-Rallye</a>
+                        </div>
+                        <div class="w3-right w3-white">
+                            <a href="Impressum" style="text-decoration: none">Impressum</a>
+                            <a href="Datenschutz" style="text-decoration: none">Datenschutz</a>
+                        </div>
+                     </div>
+                  </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+

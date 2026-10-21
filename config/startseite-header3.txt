@@ -1,0 +1,17 @@
+<div class="w3-right w3-hide-small w3-hide-medium">
+   <a href="Karte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Karte</a>
+   <a href="Orte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Orte</a>
+   <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Unterwegs</a>
+</div>
+</div>
+</div>
+<div id="nav" class="w3-bar-block w3-white w3-hide w3-hide-large  w3-top" style="margin-top:46px">
+   <a href="." class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Startseite</a>
+   <a href="Karte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Karte</a>
+    <a href="Orte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Orte</a>      
+    <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Unterwegs</a>      
+</div>
+<div class="w3-content content">
+<div class="w3-row w3-padding-64">
+<div class="w3-col m12 w3-padding-large">
+            

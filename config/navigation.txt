@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="de">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="">
+      <title>Navigation</title>
+      <link rel="icon" type="image/png" href="bilder/bilder/icon.png"/>
+      <link rel="stylesheet" href="css/w3.css">
+      <link rel="stylesheet" href="css/qr-code-rallye.css">
+      <script src="js/qr-code-rallye.js"></script>
+   </head>
+   <body>
+      <div class="w3-top content w3-display-topmiddle">
+         <div class="w3-bar w3-white w3-card">
+            <a class="w3-button w3-padding-large w3-hide-large w3-right w3-hover-white" href="#" onclick="myFunction()">
+               <svg viewBox="0 0 50 40" width="20" height="30">
+                  <rect width="30" height="5"></rect>
+                  <rect y="15" width="30" height="5"></rect>
+                  <rect y="30" width="30" height="5"></rect>
+               </svg>
+            </a>
+            <a href="."><img src="bilder/bilder/icon.png" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large "></a>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-small w3-hide-medium">Navigation</div>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-large">Navigation</div>               
+            <div class="w3-right w3-hide-small w3-hide-medium">
+               <a href="Karte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Karte</a>
+       <a href="Orte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Orte</a>
+       <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Unterwegs</a>       
+            </div>
+         </div>
+      </div>
+      <div id="nav" class="w3-bar-block w3-white w3-hide w3-hide-large  w3-top" style="margin-top:46px">
+         <a href="." class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Startseite</a>
+         <a href="Karte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Karte</a>
+         <a href="Orte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Orte</a>
+         <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Unterwegs</a>         
+      </div>
+      <div class="w3-content content">
+         <div class="w3-row w3-padding-64">
+            <div class="w3-col m12 w3-padding-large">
+               <b>Geocaching</b><br>
+               Beim Geocaching (<a href="https://de.wikipedia.org/wiki/Geocaching">Wikipedia</a>, <a href="https://www.geocaching.com">geocaching.com</a>, 
+               <a href="https://www.opencaching.de">Opencaching.de</a>, <a href="https://www.zdf.de/kinder/loewenzahn/geocaching-106.html">Löwenzahn-Folge</a>)
+               werden mithilfe eines Navigationsgerätes oder eines Smartphones in Form einer digitalen Schnitzeljagd Schätze an geheimnisvollen Orten gesucht. 
+               Mit der Verbreitung von Smartphones und teilweise kostenloser Geocaching-Apps erfreut sich Geocaching einer immer größeren Beliebtheit. 
+               <br><br>
+               <b>QR-Code-Rallye</b><br>
+                Die QR-Code-Rallye ist eine digitale Schnitzeljagd ähnlich dem Geocaching. Du kannst viele geheimnisvolle Orte kennenlernen und deinen Besuch digital protokollieren.
+                Bei jedem Ort geben wir dir einen Hinweis.
+               <br><br>
+              <b> Navigation über diese Internetseite</b><br>
+               Du kannst über <a href="Orte">Orte</a>, <a href="Karte">Karte</a> oder dein Benutzerprofil den Ort auswählen und dich über deine Navigations-App zu deinem Ziel navigieren lassen.
+                <br><br>              
+               <b>GPX-Dateien mit allen Orten und als Wegempfehlung</b><br>
+               Wie beim Geocaching kannst du auch die GPS-Koordinaten als GPX-Datei verwenden. 
+               Die GPX-Datei <a href="dateien/orte.gpx" download>orte.gpx</a> enthält die GPS-Koordinaten aller zu suchenden Orte. Auch kannst du den empfohlenen Weg 
+               <a href="dateien/track.gpx" download>track.gpx</a> als Track downloaden. Die GPX-Dateien kannst du in einer Navigationssoftware verwenden.
+              <br><br>
+              <b>Navigations-App Organic Maps</b><br>
+              <a href="https://organicmaps.app/de">Organic Maps</a> (<a href="https://play.google.com/store/apps/details?id=app.organicmaps">Android App</a>, 
+              <a href="https://apps.apple.com/us/app/organic-maps-offline-map/id1567437057?platform=iphone">iPhone App</a>)
+
+              ist eine kostenlose und werbeffreie Navigationssoftware, die sich hervorragend für die QR-Code-Rallye eignet. Nach der Installation der App kannst du die Karten deiner Region kostenlos im WLAN herunterladen und 
+              anschließend offline, ohne Internetverbindung, zur Navigation nutzen. Um die GPX-Datei mit den Wegpunkten und/oder die GPX-Datei dem Track der QR-Code-Rallye einzubinden, kannst du die Dateien 
+              <a href="dateien/orte.gpx" download>orte.gpx</a> und <a href="dateien/track.gpx" download>track.gpx</a> auf dein Smartphone herunterladen und direkt in Organic Maps öffnen.
+                Alternativ kannst du die GPX-Dateien auch auf dein Smartphone herunterladen, Organic Maps öffnen und die Datei manuell importieren.
+
+
+              
+              <br><br>
+              
+              <b>Alternative Navigations-App OsmAnd</b><br>
+              Als Alternative kannst du dir auch die App <a href="https://osmand.net">OsmAnd</a> (<a href="https://play.google.com/store/apps/details?id=net.osmand">Android App</a>, 
+              <a href="https://apps.apple.com/de/app/osmand-maps-reise-navigation/id934850257">iOS App</a>) anschauen.
+                      
+
+              <br><br>
+
+               <br><br><br>
+               <img src="bilder/bilder/demo-bourtange-drohne.png " class="w3-image center ">
+               <br><br>
+               <br> <br><br>
+               <footer>
+                  <div class="w3-buttom content">
+                     <div class="w3-bar w3-white">
+                        <div class="w3-left">
+                           &copy; <a href="." style="text-decoration: none">QR-Code-Rallye</a>
+                        </div>
+                        <div class="w3-right w3-white">
+                            <a href="Impressum" style="text-decoration: none">Impressum</a>
+                            <a href="Datenschutz" style="text-decoration: none">Datenschutz</a>
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+

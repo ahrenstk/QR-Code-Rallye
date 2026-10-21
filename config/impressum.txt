@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="de">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="">
+      <title>Impressum</title>
+      <link rel="icon" type="image/png" href="bilder/bilder/icon.png"/>
+      <link rel="stylesheet" href="css/w3.css">
+      <link rel="stylesheet" href="css/qr-code-rallye.css">
+      <script src="js/qr-code-rallye.js"></script>
+   </head>
+   <body>
+      <div class="w3-top content w3-display-topmiddle">
+         <div class="w3-bar w3-white w3-card">
+            <a class="w3-button w3-padding-large w3-hide-large w3-right w3-hover-white" href="#" onclick="myFunction()">
+               <svg viewBox="0 0 50 40" width="20" height="30">
+                  <rect width="30" height="5"></rect>
+                  <rect y="15" width="30" height="5"></rect>
+                  <rect y="30" width="30" height="5"></rect>
+               </svg>
+            </a>
+            <a href="."><img src="bilder/bilder/icon.png" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large "></a>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-small w3-hide-medium">Impressum</div>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-large">Impressum</div>               
+            <div class="w3-right w3-hide-small w3-hide-medium">
+               <a href="Karte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Karte</a>
+               <a href="Orte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Orte</a>
+               <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Unterwegs</a>
+            </div>
+         </div>
+      </div>
+      <div id="nav" class="w3-bar-block w3-white w3-hide w3-hide-large  w3-top" style="margin-top:46px">
+         <a href="." class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Startseite</a>
+   <a href="Karte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Karte</a>
+    <a href="Orte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Orte</a>
+    <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Unterwegs</a>     
+      </div>
+      <div class="w3-content content">
+         <div class="w3-row w3-padding-64">
+            <div class="w3-col m12 w3-padding-large">
+
+      
+               <b>Impressum</b>
+               <br><br>
+               Angaben gemäß § 5 TMG<br>
+               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br><br>
+               <b>Organisation</b><br>
+               Vorname Nachname, Funktion<br>
+               name @ organisation.de<br>
+               Tel.: 012345 -67890<br>
+               Fax: 012345- 67890<br>
+               Öffnungszeiten:<br>
+               Di. und Do.: 14:30-17:30 Uhr<br>
+               Mi.: 9:00-12:00 Uhr<br>
+               oder nach Vereinbarung<br>
+               <br>
+               <a href="https://">Link zur Organisation</a>
+               <br><br>
+               Angaben zum <a href="Datenschutz">Datenschutz</a>
+               <br><br>
+               Bitte beachten Sie die wichtigen rechtlichen Hinweise zu den Inhalten und zur Verfügbarkeit dieser Webseite, zum Urheberrecht und zu externen Links.
+               Inhalte dieser Webseite
+               <br><br>
+               Die Inhalte dieser Webseite werden mit größtmöglicher Sorgfalt erstellt. Der Webseitenbetreiber übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte.
+               Verfügbarkeit der Webseite
+               <br><br>
+               Der Webseitenbetreiber wird sich bemühen, den Dienst möglichst unterbrechungsfrei zum Abruf anzubieten. Auch bei aller Sorgfalt können aber Ausfallzeiten nicht ausgeschlossen werden. Er behält sich das Recht vor, sein Angebot jederzeit zu ändern oder einzustellen. Für durch nicht fehlerfrei angelegte Dateien oder nicht fehlerfrei strukturierte Formate bedingte Unterbrechungen oder anderweitige Störungen können wir keine Gewähr übernehmen.
+               Urheberrecht
+               <br><br>
+               Alle Inhalte und Strukturen dieser Webseite sind urheber- und leistungsschutzrechtlich geschützt. Sie stammen vom Bischöfliches Hilfswerk MISEREOR e. V. und den teilnehmenden Organisationen.
+               Die Veröffentlichung im World Wide Web oder in sonstigen Diensten des Internet bedeutet noch keine Einverständniserklärung für eine anderweitige Nutzung durch Dritte. Jede vom deutschen Urheberrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Webseitenbetreibers.
+               <br><br>
+               Wir erlauben und begrüßen ausdrücklich das Zitieren unserer Dokumente sowie das Setzen von Links auf unsere Website, solange kenntlich gemacht wird, dass es sich um Inhalte des Webseitenbetreibers handelt und diese Inhalte nicht in Verbindung mit Inhalten Dritter gebracht werden, die den Interessen des Webseitenbetreibers widersprechen.
+              
+               <br><br>
+               Der Webseitenbetreiber ist als Inhaltsanbieter nach § 7 Abs.1 Telemediengesetz für die "eigenen Inhalte", die er zur Nutzung bereithält, nach den allgemeinen Gesetzen verantwortlich. Von diesen eigenen Inhalten sind Querverweise ("Links") auf die von anderen Anbietern bereitgehaltenen Inhalte zu unterscheiden. Durch den Querverweis hält der Webseitenbetreiber insofern "fremde Inhalte" zur Nutzung bereit, die sich dadurch auszeichnen, dass sie in einem neuen Browserfenster bzw. in einem neuen Tab des Browsers geöffnet werden.
+               <br><br>
+               Bei "Links" handelt es sich stets um "lebende" (dynamische) Verweisungen. Der Webseitenbetreiber hat bei der erstmaligen Verknüpfung zwar den fremden Inhalt daraufhin überprüft, ob durch ihn eine mögliche zivilrechtliche oder strafrechtliche Verantwortlichkeit ausgelöst wird. Er überprüft aber die Inhalte, auf die er in seinem Angebot verweist, nicht ständig auf Veränderungen, die eine Verantwortlichkeit neu begründen könnten. Wenn er feststellt oder von anderen darauf hingewiesen wird, dass ein konkretes Angebot, zu dem er einen Link bereitgestellt hat, eine zivil- oder strafrechtliche Verantwortlichkeit auslöst, wird er den Verweis auf dieses Angebot aufheben.
+
+               
+               <br><br>
+              
+
+                <br><br><br>              
+               <img src="bilder/bilder/demo-bourtange-drohne.png" class="w3-image center ">
+               <br>
+               <br> <br><br>
+               <footer>
+                  <div class="w3-buttom content">
+                     <div class="w3-bar w3-white">
+                        <div class="w3-left">
+                           &copy; <a href="." style="text-decoration: none">QR-Code-Rallye</a>
+                        </div>
+                        <div class="w3-right w3-white">
+                            <a href="Impressum" style="text-decoration: none">Impressum</a>
+                            <a href="Datenschutz" style="text-decoration: none">Datenschutz</a>
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+

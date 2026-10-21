@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="de">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="">
+      <title>Admin</title>
+      <link rel="icon" type="image/png" href="bilder/bilder/icon.png"/>
+      <link rel="stylesheet" href="css/w3.css">
+      <link rel="stylesheet" href="css/qr-code-rallye.css">
+      <script src="js/qr-code-rallye.js"></script>
+   </head>
+   <body>
+      <div class="w3-top content w3-display-topmiddle">
+         <div class="w3-bar w3-white w3-card">
+            <a class="w3-button w3-padding-large w3-hide-large w3-right w3-hover-white" href="#" onclick="myFunction()">
+               <svg viewBox="0 0 50 40" width="20" height="30">
+                  <rect width="30" height="5"></rect>
+                  <rect y="15" width="30" height="5"></rect>
+                  <rect y="30" width="30" height="5"></rect>
+               </svg>
+            </a>
+            <a href="."><img src="bilder/bilder/icon.png" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large "></a>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-small w3-hide-medium">Anleitung für Administratoren</div>
+            <div class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-large w3-hide-large">Administration</div>               
+            <div class="w3-right w3-hide-small w3-hide-medium">
+               <a href="Karte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Karte</a>
+   <a href="Orte" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Orte</a>
+   <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-medium w3-hover-white w3-large">Unterwegs</a>
+            </div>
+         </div>
+      </div>
+      <div id="nav" class="w3-bar-block w3-white w3-hide w3-hide-large  w3-top" style="margin-top:46px">
+         <a href="." class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Startseite</a>
+         <a href="Karte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Karte</a>
+         <a href="Orte" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Orte</a>
+         <a href="Unterwegs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Unterwegs</a>
+      </div>
+      <div class="w3-content content">
+         <div class="w3-row w3-padding-64">
+            <div class="w3-col m12 w3-padding-large">
+              
+                <b>QR-Code-Rallye</b><br>
+              Das Beispiel ist voll funktionsfähig und enthält zusätzlich nur den Demo-Hinweis auf der Startseite, die Demo-Zugangsdaten (demo.html) sowie diese Administrationsanleitung (admin.html).
+              Eine normale QR-Code-Rallye sollte mehr Orte enthalten und zudem über eine größere Fläche stattfinden (Fahrrad, zu Fuß). 
+              Die Informationen zu den Orten befinden sich in den Ordnern "orte" und "bilder". Für die Anpassung sind einfache HTML-Kenntnisse erforderlich. 
+              Die Software unterstützt insgesamt bis zu 89 Orte (00 bis 89). Der Aktionszeitraum beträgt maximal 60 Tage.
+    <br><br>
+    <b>Anpassung der Software</b></br>
+    Durch  Softwareanpassungen sind Varianten möglich. So könnten  Orte, Karte und Navigation weglassen und  das Benutzerprofil so angepasst werden, dass die weiteren Orte nicht bekannt sind.
+    Erst mit Scannen eines Ortes würde in der Beschreibung auf den nächsten Ort hingewiesen. Werden die Orte im Kreis verknüpft, könnten Benutzergruppen an unterschiedlichen Orten die QR-Code-Rallye starten.
+    Nachteil ist, dass wenn ein Ort nicht gefunden wird, die QR-Code-Rallye nicht fortgesetzt werden kann.
+    
+              <br><br>
+               <b>Technische Voraussetzungen:</b><br>
+               Bei Interesse stellen wir dir die Software kostenlos zur Verfügung und unterstützen dich auch gerne bei der Konfiguration der Software.
+               Sowohl die Orts-IDs, QR-Codes, Zeitstempel als auch die Webseiten für die Orte werden dynamisch erzeugt. Die Software nutzt nur HTML, PHP, CSS, wenig JS und .htaccess (Rewrite). 
+               Als Web-Framework wird W3.CSS verwendet. Eine Datenbank wird nicht benötigt.
+               Die Software ist auf jedem Webserver als Unterdomain oder in einem Unterordner lauffähig. Es werden nur relative Pfade verwendet. Falls notwendig kann ein kostenloser Webspace (z. B. lima-city) verwendet werden. 
+               Die Version <a href="https://qr.lima.zone">qr.lima.zone</a> wird kostenlos auf <a href="https://www.lima-city.de">lima-city</a> gehostet.
+               <br><br>
+                <b>Aufwand:</b><br>
+               Der Installations- und Konfigurationsaufwand kann vernachlässigt werden und dauert nur wenige Minuten. Der größte Aufwand liegt im Finden von geeigneten Orten, der Erfassung von Namen, Koordinaten sowie Texten und Bilder (optional).
+               Zudem muss der QR-Code für jeden Ort ausgedruckt und regelmäßig überprüft werden, sofern er nicht hinter Glas sicher aufgehangen werden kann. Zudem müssen natürlich Teilnehmer für die Aktion begeistert werden.
+               Die Orte können wie beim Geocaching mit kleinen Aufgaben, ein Logbuch sowie mit kleinen Schätzen zum Tauschen aufgewertet werden. Der QR-Code kann auch in Cache-Behältnisse gelegt werden.
+               <br><br>
+               
+               <b>Cookies und Protokollierung</b><br>
+              Die Software verwendet keine Cookies. Die 4-stelligen Zeitstempel werden auf Basis des Orts und des Zeitpunkts (10-Minuten-Intervalle) 
+              berechnet. Die einzelnen Zeitstempel/Ort-Kombinationen können mit einen Benutzernamen verknüpft werden. Dieser ist ein frei-wählbarer Begriff mit mindestens 6 Zeichen.
+              Die Benutzerverwaltung ist nicht unbedingt notwendig und kann leicht aus der Software entfernt werden. In dem Fall müssten die 4-stelligen Zeitstempel/Ort-Kombinationen auf Papier notiert werden.
+              <br><br>
+              
+              <b>Installation und Konfiguration</b><br>
+                Die Software wird als ZIP-Datei bereitgestellt und muss entpackt auf dem Webspace in einen Unterordner oder Unterdomain hochgeladen werden. Es ist sicherzustellen, dass die .htaccess 
+                (Kopie /dateien/htaccess.txt) verwendet wird. Das entpackte ZIP-Archiv ist direkt lauffähig. 
+                <br><br>
+                
+<b>Welche Schritte sind für die Erstellung für jeden Ort durchzuführen?</b><br>
+<ul>
+<li>jeder Ort hat eine eindeutige zweistellige Nummer zwischen <b>01</b> und <b>89</b></li>
+<li>jeder Ort benötigt einen aussagekräftigen <b>Namen</b> und optional einen <b>Hinweis</b></li>
+<li>die Sortierung der Orte erfolgt nach Namen, evtl. Ort zuerst benennen</li>
+<li>die Koordinaten müssen z. B. mit dem Tool <a href="Koordinaten">Koordinaten</a> ermittelt werden</li>
+<li>Nummer, Name, Koordinaten und Zusatzinfo müssen in orte/orte.txt eingetragen werden</li>
+<li>Bilder müssen erstellt, für Webseiten optimiert und in den Bilderordner des Orts z. B. bilder/01 hochgeladen werden </li>
+<li>die Inhalte der Webseite müssen als HTML-Inhalte in Textdateien z. B. in orte/01.txt codiert werden, Bilder werden dort verlinkt</li>
+<li>der QR-Code muss ausgedruckt und wetterfest am jeweiligen Ort bereitgestellt werden</li>
+<li>der QR-Code muss regelmäßig vor Ort überprüft werden</li>
+ </ul>
+ 
+                
+     
+     
+<b>Was muss in der Software (config/config.txt) angepasst werden?</b>
+
+</ul>
+<ul>
+<li>titelkurz=QR-Code-Rallye</li>
+<li>titellang=QR-Code-Rallye</li>
+<li>secret=demo</li>
+<li>stationoffset=42</li>
+<li>shuffle=10</li>
+<li>sevenmodulo=100</li>
+<li>adminpasswort=passwort</li>
+<li>aktionsende=false</li>
+<li>beginnaktion=01.08.2025</li>
+<li>endeaktion=30.09.2025</li></li>
+<li>breite = 53.006727</li>
+<li>laenge = 7.192089</li>
+<li>zoom1=17</li>
+<li>zoom2=18</li>
+<li>kartenhinweis=false</li>
+<li>aktionsende=false</li>
+<li>meinname=meinname42</li>
+</ul> 
+            
+<b>Startseite</b><br>
+Die Inhalte der Startseite sind anzupassen. 
+
+<br><br>
+<b>Impressum und Datenschutz</b><br>
+Das Impressum und Datenschutz sind in .htaccess zu verlinken.  <br>
+
+RewriteRule ^Impressum$ https://meine-domain.de/pfad/zum/impressum [L,R=301]<br>
+RewriteRule ^Datenschutz$ https://meine-domain.de/pfad/zum/datenschutz [L,R=301]
+
+<br><br>
+<b>Karte</b><br>
+Die Karte wird auf Basis der erfassten Daten automatisch erzeugt. Die Koordinaten (Längen und Breitengrade) sind für die Zentrierung sowie Zoom der Karte sind auf den eigenen Ort bzw. Stadt anzupassen. 
+Die Software unterstützt die Darstellung von Bildern auf der Karte. Die Bilder sind unter dem Namen karte.jpg im jeweiligen Ordner als z. B. als bilder/01/karte.jpg zu speichern. 
+<br><br>
+
+<b>Orte</b><br>
+Die Liste der Orte wird automatisch generiert. Bei Bedarf kann der einleitende Text angepasst werden.
+<br><br>
+
+<b>Navigation</b><br>
+Es können z. B. weitere Apps zur Navigation hinzugefügt werden
+<br><br>
+<b>Berechnung von Koordinaten</b><br>
+Mit https://[...]/pfad/Koordinaten bzw. koordinaten.html steht ein einfaches Tool zur Ermittlung von Koordinaten bereit. 
+Die Koordinaten werden für jeden Ort sowie für die Zentrierung der der Karte benötigt.
+<br><br> 
+<b>Bereitstellung GPX-Dateien</b><br>
+Die Koordinaten der Orte sowie ein Track können als GPX-Datei bereitgestellt werden. Wenn alle Koordinaten festgelegt sind, <b>muss</b> die Adresse https://[...]/pfad/gpx.php aufgerufen 
+und der Inhalt in die Datei dateien/orte.gpx.kopiert werden. Optional kann auch ein Track z. B. mit <a href="https://brouter.de/brouter-web">BRouter-Web</a> erstellt und als dateien/track.gpx gespeichert werden.
+<br><br>               
+         
+<b>QR-Code erstellen</b><br>
+Mit dem Aufruf https://[...]/pfad/passwort_all (Passwort ersetzen durch eigenes Passwort $adminpasswort) können alle Orte und alle QR-Codes angezeigt und ausgedruckt werden.
+
+Die Erstellung der QR-Codes kann zudem individualisiert werden (qr.php). So sind unter anderen die Größe der QR-Code-Seite anpassbar. 
+Aktuell findet bei einem Bindestrich (-) mit einem Leerzeichen davor und dahinter ein Zeilenumbruch statt. 
+Mit „rechte Maustaste“ auf den QR-Code kann der QR-Code auch allein aufgerufen und in der Größe angepasst werden. Hierdurch kann er z. B. in individuellen Dokumenten aufgenommen werden.
+
+<br><br>
+<b>Hintergrundbild Homepage</b><br>
+Als Hintergrundbild wird aktuell bilder/bilder/logo.png verwendet. Der Dateiname wird in css/qr-code-rallye.css festgelegt.
+               
+<br><br>      
+               
+               
+<b>Backup</b><br>
+Es sind regelmäßig Backups aller Dateien anzufertigen. Hierzu kann z. B. der Gesamtordner gezippt und gesichert werden.
+Vor allen die Konfigurationen sind zu sichern, da ohne diese die Zeitstempel nicht wiederhergestellt werden können.
+    
+ 
+<br><br>
+<b>Web-Admintool</b></b><br>
+Mit dem Passwort $adminpasswort können die folgenden Aktionen durchgeführt werden. Trennzeichen ist der Unterstrich: _
+             
+               
+       <br><br>        
+<b>Anzeige aller Orte, Links und QR-Codes</b><br>
+Über diese Funktion können alle URLs und damit QR-Codes für den Ausdruck erstellt werden.
+<br><br>
+                <img src="dateien/demo-admin-all.png" class="w3-image center ">
+<br><br>
+<b>Umwandlung Ort, Tag und Zeitinvall zum 4-stelligen Zeitstempel</b><br>
+Jeder Ort, Datum, Stunde und Zeitintervall kann in einen eindeutigen 4-stelligen Zeitstempel umgewandelt werden. 
+Dieses entspricht dem Scannen des QR-Codes an dem Ort im angegebenen Zeitintervall.
+Die Zeitintervalle sind wie folgt definiert: 
+0: :00 bis :10, 1: :10 bis :20, 2: :20 bis :30, 3: :30 bis :40, 4: :40 bis :50, 5: :50 bis :00
+<br><br>
+                <img src="dateien/demo-admin-zeitintervall.png" class="w3-image center ">
+
+
+<br><br>
+<b>Umwandlung 4-stelligen Zeitstempel zu Ort, Tag und Zeitinvall</b><br>
+Jeder 4-stelliger Zeitstempel kann zurück in einen Ort, Datum, Stunde und Zeitintervall umgewandelt werden.
+<br><br>
+                <img src="dateien/demo-admin-zeitstempel.png" class="w3-image center ">
+
+
+<br><br>
+
+<b>Suche in Orten und Hinweisen</b><br>
+Bei vielen Orten bietet sich die Funktion im Gegensatz zu "passwort_all" an.
+<br><br>
+                <img src="dateien/demo-admin-suche.png" class="w3-image center ">
+
+
+<br><br>
+  
+                <b>Corona Fastenmarsch 2021</b><br>
+               
+           Schaue dir gerne den <a href="https://boje-verbund.de/fastenmarsch2021">Corona Fastenmarsch 2021</a> (<a href="https://www.youtube.com/watch?v=BjuD7R0E_a4">Erklärvideo</a>) an, welcher die 
+           Grundlage für diese Software war.
+              Der Fastenmarsch 2021 im Emsland erstreckte sich über etwa 30 km x 30 km mit 48 Stationen. 
+              Die Anzahl und der Abstand der Orte sollte möglichst so gewählt werden, dass alle Teilnehmer mit dem Fahrrad oder zu Fuß eine gewisse Herausforderung haben alle Orte zu besuchen.
+              Wie beim Fastenmarsch im Emsland ist es jedoch nicht notwendig, dass alle Teilnehmer tatsächlich alle Orte besuchen. 
+             Gerne könnt ihr diese Aktion mit Nachbargemeinden gemeinsam durchführen.
+
+                        <br><br>
+   
+               Bei Fragen schickt mir gerne eine <a href="mailto:heinz.ahrens@web.de">E-Mail</a>.<br>
+             
+
+  
+                <br><br><br>
+                <footer>
+                  <div class="w3-buttom content">
+                     <div class="w3-bar w3-white">
+                        <div class="w3-left">
+                           &copy; <a href="." style="text-decoration: none">QR-Code-Rallye</a>
+                        </div>
+                        <div class="w3-right w3-white">
+                            <a href="Impressum" style="text-decoration: none">Impressum</a>
+                            <a href="Datenschutz" style="text-decoration: none">Datenschutz</a>
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

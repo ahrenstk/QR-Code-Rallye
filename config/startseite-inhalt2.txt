@@ -1,0 +1,17 @@
+ </li>
+               <li>
+                     Oder gib den Zeitstempel <b>0000</b> in Verbindung mit <b>QR-Code Beispiel</b> oben auf dieser 
+                     Seite ein.
+                  </li>
+                  <li>
+                     Beim Beispielort findest du weitere Informationen.
+                  </li>
+               </ul>
+               <br><br>
+               
+               
+               
+               Viel Spaß bei unserer QR-Code-Rallye!<br>
+               Herzliche Grüße.
+               <br><br><br>
+             

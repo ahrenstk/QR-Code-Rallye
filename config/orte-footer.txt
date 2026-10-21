@@ -1,0 +1,30 @@
+     <br>
+     Du kannst dich per Google Maps App oder einer anderen Navigations App ans Ziel navigieren lassen oder die Orte direkt suchen.
+
+     
+              Weitere Informationen findet du in der <a href="Navigation">Navigationsanleitung</a>.
+               <br><br>     
+     
+     
+     
+                <br><br><br>
+                <img src="bilder/bilder/demo-bourtange-drohne.png" class="w3-image center ">
+                <br><br><br>
+                <footer>
+                  <div class="w3-buttom content">
+                     <div class="w3-bar w3-white">
+                        <div class="w3-left">
+                           &copy; <a href="." style="text-decoration: none">QR-Code-Rallye</a>
+                        </div>
+                        <div class="w3-right w3-white">
+                            <a href="Impressum" style="text-decoration: none">Impressum</a>
+                            <a href="Datenschutz" style="text-decoration: none">Datenschutz</a>
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

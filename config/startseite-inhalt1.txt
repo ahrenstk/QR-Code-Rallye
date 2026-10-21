@@ -1,0 +1,40 @@
+             <img src="bilder/bilder/demo-bourtange-banner.png" class="w3-image center">
+               <div class="w3-center">
+                  <br>
+                  <b>
+                  Dies ist eine Demoversion. Bei Interesse an der Software kannst du mir gerne eine <a href="mailto:heinz.ahrens@web.de">E-Mail</a> schreiben.<br>
+                  Du kannst mit den <a href="demo">Demo-Zugangsdaten</a> die Software testen.
+                  </b>
+               </div>
+               <br>
+               Im Zeitraum  vom 01.10.2026 bis 31.11.2026 kannst du an unserer digitalen Schnitzeljagd auf der <a href="https://www.bourtange.nl">Festung Bourtange</a> teilnehmen
+               und insgesamt 5 geheimnisvolle Orte entdecken.
+               <br><br>
+               <b>So geht's</b><br>
+               <div class="w3-container">
+                  <ul>
+                     <li>
+                        Finde bei unserer Schnitzeljagd die QR-Codes an den geheimnisvollen <a href="Orte">Orten</a> oder auf der <a href="Karte">Karte</a> in beliebiger Reihenfolge.
+                     </li>
+                     <li>
+                        Scanne den vor Ort gefundenen QR-Code und du wirst auf eine individuelle Seite mit Informationen über den Ort weitergeleitet.
+                     </li>
+                     <li> Oben auf der Seite wird dir dein persönlicher 4-stelliger Zeitstempel wie z. B. 
+                        <button class="w3-button w3-hover-teal w3-teal w3-round w3-small">0 0 0 0</button>
+                        angezeigt den du für den Ort notieren kannst.
+                     </li>
+                     <li> Du kannst den Zeitstempel deinem Benutzerprofil hinzufügen. Erstelle einen Benutzernamen mit mindestens 8 Zeichen, der mindestens 2 Buchstaben und 2 Zahlen enthält (z. B. meinname42).
+                     </li>
+                  </ul>
+               </div>
+               Oben auf dieser Seite kannst du oder deine Freunde die Zeitstempel/Ort-Kombinationen kontrollieren. Auch kannst du dich mit deinem Benutzernamen dort anmelden.
+               Bitte verrate deinen Benutzernamen nicht.
+               <br><br>
+               <b>Klingt alles kompliziert?</b><br>
+               <ul>
+                  <li>
+                     Scanne den Beispiel-QR-Code mit deinem Smartphone und schau was passiert. 
+                     <br><br>
+                    <div class="w3-center">
+         <b>QR-Code-Rallye - Beispielort<br>
+                     
