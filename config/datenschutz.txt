@@ -113,12 +113,11 @@
                Unser betrieblicher Datenschutzbeauftragter steht Ihnen gerne für Auskünfte oder Anregungen zum Thema Datenschutz zur Verfügung:
                <br><br>
                <b>Datenschutzbeauftragter:</b><br>
-               Vorname<br>
-               Firma<br>
-               Straße<br>
-               PLZ Ort<br>
-               Telefonnummer<br>
-               E-Mail-Adresse<br>
+               Heinz Ahrens<br>
+               Pollertstraße 8<br>
+               26892 Kluse<br>
+               Tel.: 04963/1740<br> 
+               https://github.com/ahrenstk<br>
                <br><br><br>
                <img src="bilder/bilder/demo-bourtange.jpg" class="w3-image center ">
                <br>
