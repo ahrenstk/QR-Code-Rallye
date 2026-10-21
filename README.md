@@ -6,7 +6,7 @@ Eine leichtgewichtige, dateibasierte Schnitzeljagd- und Geocaching-Webanwendung 
 
 ## 🎯 Entstehungsgeschichte
 
-Das [Kath. Jugendbüro des Dekanats Emsland-Nord](https://www.kjb-emsland-nord.de) organisiert gemeinsam mit vielen ehrenamtlich Engagierten traditionell am dritten Fastensonntag den [Misereor Fastenmarsch](https://www.kjb-emsland-nord.de/veranstaltungen-1/misereor-fastenmarsch). Im Jahr 2021 wurde der Fastenmarsch aufgrund der Corona-Pandemie digital durchgeführt. So könnten die Teilnehmer während der Fastenzeit per QR-Code digital vierstellige Stempel sammeln. Schau gerne auf der [Projektseite Fastenmarsch 2021](https://boje-verbund.de/fastenmarsch21) vorbei. 
+Das [Kath. Jugendbüro des Dekanats Emsland-Nord](https://www.kjb-emsland-nord.de) organisiert gemeinsam mit vielen ehrenamtlich Engagierten traditionell am dritten Fastensonntag den [Misereor Fastenmarsch](https://www.kjb-emsland-nord.de/veranstaltungen-1/misereor-fastenmarsch) zugunsten der [MISEREOR Fatenaktion](https://www.misereor.de/mitmachen/fastenaktion). Im Jahr 2021 wurde der Fastenmarsch aufgrund der Corona-Pandemie digital durchgeführt. So könnten die Teilnehmer während der Fastenzeit per QR-Code digital vierstellige Stempel sammeln. Schau gerne auf der [Projektseite Fastenmarsch 2021](https://boje-verbund.de/fastenmarsch21) vorbei. 
 
 
 ## 🎯 Über das Projekt
