@@ -49,14 +49,11 @@
                Angaben gemäß § 5 TMG<br>
                Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br><br>
                <b>Organisation</b><br>
-               Vorname Nachname, Funktion<br>
-               name @ organisation.de<br>
-               Tel.: 012345 -67890<br>
-               Fax: 012345- 67890<br>
-               Öffnungszeiten:<br>
-               Di. und Do.: 14:30-17:30 Uhr<br>
-               Mi.: 9:00-12:00 Uhr<br>
-               oder nach Vereinbarung<br>
+               Heinz Ahrens<br>
+               Pollertstraße 8<br>
+               26892 Kluse<br>
+               Tel.: 04963/1740<br>               
+               https://github.com/ahrenstk<br>
                <br>
                <a href="https://">Link zur Organisation</a>
                <br><br>
