@@ -17,7 +17,7 @@ Du kannst dir das Live-Demo [QR-Code-Rallye](https://ahrens.tk/QR-Code-Rallye) a
 
 ## 🎯 Über das Projekt
 
-Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents oder Geocaching-Aktionen. Das System nutzt **zeitbasierte, ortsbasierte rotierende 4-stellige Codes** im 10-Minuten-Takt, die über eine modulare mathematische Prüfsumme abgesichert sind. Diese Zeitstempel können dann online gespeichert oder auf Papier notiert werden, um den tatsächlichen Besuch der Station zu einem festen Zeitpunkt zu beweisen.
+Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents oder Geocaching-Aktionen. Das System nutzt **zeitbasierte, ortsbasierte rotierende 4-stellige Codes** im 10-Minuten-Takt. Diese Zeitstempel können dann online gespeichert oder auf Papier notiert werden, um den tatsächlichen Besuch der Station zu einem festen Zeitpunkt zu dokumentieren. Beim Fastenmarsch 2021 galt der auf Papier aufgeschriebene Zeitstempel als Nachweis für den Besuch der Station gegenüber den Sponsoren siehe [Beispiele](https://boje-verbund.de/fastenmarsch2021/Stationen).
 
 ---
 
