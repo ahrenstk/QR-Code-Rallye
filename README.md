@@ -40,7 +40,7 @@ Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents
 
 ## 🛠️ Konfigurationen
 
-Die Konfigurationen erfolgen in den Ordnern `orte`, `bilder`sowie `config`. Zur Verwendung der Testversion mit **Festung Bourtange** passe in `config/variablen.txt` das Zeitintervall entsprechend an. 
+Die Konfigurationen erfolgen in den Ordnern `orte`, `bilder`sowie `config`. Zur Verwendung der Testversion mit **Festung Bourtange** passe in `config/variablen.txt` das Zeitintervall entsprechend an. Nur im angegebenen Aktionszeitraum werden 4-stellige Stempel erzeugt.
 
 
 
@@ -50,6 +50,7 @@ Die Konfigurationen erfolgen in den Ordnern `orte`, `bilder`sowie `config`. Zur 
 
 * **Keine Tracking-Cookies:** Die Anwendung setzt keine Cookies zur Profilverfolgung ein.
 * **Pseudonymisierte Profile:** Teilnehmer wählen einen Benutzernamen zur serverseitigen Speicherung ihrer Zeitstempel aus (optionnal)
+* **Hinweis auf Drittanbieter-Webseiten** In der Konfiguration kann der Hinweis auf OpenStreetMap und Esri aktiviert / deaktiviert werden
   
 ---
 
