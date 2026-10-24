@@ -11,7 +11,7 @@ Das [Kath. Jugendbüro des Dekanats Emsland-Nord](https://www.kjb-emsland-nord.d
 
 ## 🚀 Live-Demo
 
-Du kannst dir das Live-Demo [QR-Code-Rallye](https://ahrens.tk/QR-Code-Rallye) anschauen. Stell dir vor du würdest die [Festung Bourtange](https://www.bourtange.de) besuchen und es dort vor Ort spielen. Auch kannst du dir wie oben beschrieben nachträglich den [Fastenmarsch 2021](https://boje-verbund.de/fastenmarsch2021) anschauen. Es wurden jedoch eine Funktionen zwischenzeitlich optimiert. Die Spielweise ist jedoch identisch geblieben. Die Berechnung der vierstelligen Zeitstempel hat sich jedoch verändert. So wird jetzt eine [Feistelchiffre](https://de.wikipedia.org/wiki/Feistelchiffre) verwendet.
+Du kannst dir das Live-Demo [QR-Code-Rallye](https://ahrens.tk/QR-Code-Rallye) anschauen. Stell dir vor du würdest die [Festung Bourtange](https://www.bourtange.de) besuchen und es dort vor Ort spielen. Auch kannst du dir wie oben beschrieben nachträglich den [Fastenmarsch 2021](https://boje-verbund.de/fastenmarsch2021) anschauen. Es wurden jedoch eine Funktionen zwischenzeitlich optimiert. Die Spielweise ist jedoch identisch geblieben. Die Berechnung der vierstelligen Zeitstempel hat sich jedoch verändert. So wird jetzt eine [Feistelchiffre](https://de.wikipedia.org/wiki/Feistelchiffre) und keine einfache [Caesar-Verschlüsselung](https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung) verwendet.
 
 ---
 
