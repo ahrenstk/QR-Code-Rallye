@@ -54,8 +54,37 @@ Die Konfigurationen erfolgen in den Ordnern `orte`, `bilder`sowie `config`. Zur 
   
 ---
 
+
+## 📄 Lizenz & wichtige Ausnahme für deine Quizdaten
+
+Dieses Projekt ist unter der **GNU Affero General Public License v3 (AGPL v3)** lizenziert – jedoch mit einer speziellen Ausnahme für deine kreativen Inhalte.
+
+### ⚠️ Was bedeutet das für dich und deine Quizdaten?
+
+Um dir, deiner Schule oder deinem Unternehmen absolute Sicherheit und Freiheit beim Erstellen von Touren zu garantieren, haben wir den **Software-Code** strikt von deinen **kreativen Inhalten** getrennt:
+
+1. **Das Software-Framework (AGPL v3):** 
+
+   Der eigentliche Code von QR-Code-Rallye (PHP, HTML, JavaScript, CSS) ist Open-Source. Wenn du oder deine Entwickler das Kern-Framework verändern, verbessern oder erweitern, müssen diese Code-Änderungen unter der AGPL v3 ebenfalls Open-Source bleiben. Da QR-Code-Rallye eine Webanwendung ist, gilt dies ausdrücklich auch dann, wenn du die modifizierte Version auf einem Server hostest und Nutzern über ein Netzwerk (z. B. das Internet) bereitstellst – der modifizierte Quellcode muss in diesem Fall den Nutzern der Anwendung zugänglich gemacht werden.
+
+2. **Deine Tour-Daten & Medien (von der AGPL v3 AUSGESCHLOSSEN):** 
+
+   Alle deine individuellen Tour-Inhalte, Mediendateien, ... sind **ausdrücklich von der AGPL v3 ausgeschlossen**. Das betrifft im Speziellen:
+
+   * Deine Konfigurationen unter `config`
+   * Alle hochgeladenen Fotos, QR-Codes, ...
+   * Alle geschriebenen Texte, ..
+
+   **Diese Daten bleiben zu 100 % dein exklusives geistiges Eigentum.** Du bist NICHT verpflichtet, deine QR-Codes oder Bilder offenzulegen, zu teilen oder unter eine freie Lizenz zu stellen. Du kannst deine fertigen Touren völlig frei für kommerzielle Events nutzen, sie privat halten oder verkaufen.
+
+
+---
+
 ## 📄 Lizenz
 
-This project is licensed under the **MIT License**. You can find the licensing details in the `LICENSE` file.
+Dieses Projekt ist unter der **GNU Affero General Public License v3.0 (AGPL-3.0)** lizenziert. Weitere Details findest du in der Datei `LICENSE`.
+
+---
+
 
 ---
