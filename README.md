@@ -1,6 +1,6 @@
 # 📍 QR-Code-Rallye
 
-QR-Code-Rallye ist eine leichtgewichtige, dateibasierte Schnitzeljagd- und Geocaching-Webanwendung auf Basis von PHP. Teilnehmer erkunden Stationen in der realen Welt, scannen QR-Codes und sammeln so entdeckte Orte in Form von 4-stelligen digitalen Stempeln entweder auf Papeier oder in ihrem persönlichen Profil – ganz ohne schwerfällige Datenbank.
+QR-Code-Rallye ist eine leichtgewichtige, dateibasierte Schnitzeljagd- und Geocaching-Webanwendung auf Basis von PHP. Teilnehmer erkunden Stationen in der realen Welt, scannen QR-Codes und sammeln so entdeckte Orte in Form von 4-stelligen digitalen Stempeln entweder auf Papeier oder in ihrem persönlichen Profil.
 
 ---
 
