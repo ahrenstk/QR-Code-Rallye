@@ -23,7 +23,7 @@ Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents
 
 ## ✨ Hauptfunktionen
 
-* **Dynamische Zeit-Codes (10-Minuten-Intervall):** Jeder Ort generiert alle 10 Minuten einen neuen, 4-stelligen Code, maximaler Aktionszeitraum ist 61 Tage
+* **Dynamische Zeit-Codes (10-Minuten-Intervall):** Jeder Ort generiert alle 10 Minuten einen neuen, 4-stelligen Code, maximal 90 Orte, maximaler Aktionszeitraum 61 Tage
 * **Persönliches Teilnehmerprofil:**
   * Login rein über frei wählbaren Benutzernamen (keine E-Mail- oder Passwort-Registrierung nötig).
   * Übersicht aller bereits besuchten Orte inklusive Zeitstempel.
