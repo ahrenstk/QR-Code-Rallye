@@ -30,7 +30,7 @@ Die **QR-Code-Rallye** ist konzipiert für Stadtfeste, Bildungspfade, Teamevents
   * Liste noch fehlender Stationen mit direkter Navigation (Google Maps, OpenStreetMap/Geo-URI).
   * durch Änderung im Code kann die Benutzerverwaltung leicht deaktiviert werden (beim Fastenmarsch 2021 war sie nicht verfügbar)
 * **Flat-File-Architektur:** Speicherung erfolgt komplett dateibasiert (Textdateien) – keine MySQL- oder PostgreSQL-Datenbank erforderlich.
-* **Web-Framework:** Verwendung des einfachen Web-Frameworks [W3.CSS](https://www.w3schools.com/w3css)
+* **Web-Framework:** Verwendung des einfachen Web-Frameworks [W3.CSS](https://www.w3schools.com/w3css) (Hauptseite, Unterseiten so wie alle individuellen Stationsseiten)
 * **Admin-Tools:**
   * Übersicht aller Stationen und QR-Codes.
   * Simulation und Überprüfung von Codes für vergangene und zukünftige Zeitfenster.
